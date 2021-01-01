@@ -1,3 +1,29 @@
+mixin job(company, title, url, period )
+  .callout
+    .grid-x.grid-padding-x
+      .large-3.medium-3.cell
+        h5= company
+        a(href=url)=url
+      .large-4.medium-4.cell
+        h5= title
+      .large-4.medium-4.cell
+        h5.text-right= period
+      block
+mixin client( client )
+  .large-3.medium-3.cell
+    p
+      strong= client
+
+mixin description( desc )
+  .large-9.medium-9.cell
+    p= desc
+    block
+mixin technologies( desc )
+  .large-3.medium-3.cell
+    p.text-left Technologies
+  .large-9.medium-9.cell
+    p= desc
+
 doctype html
 head
   meta(charset='utf-8')
@@ -15,7 +41,7 @@ head
         a(href='mailto:pedroribeirojr@gmail.com') Email
     .large-4.medium-4.small-4.cell
       p.text-center
-        a(href='linkedin.com/in/pedroribeirojr' target='_blank') Linked In
+        a(href='linkedin.com/in/pedroribeirojr' ) Linked In
 .grid-container
   h4
     | Career Highlights
@@ -138,7 +164,7 @@ head
         p.text-left Technologies
       .large-9.medium-9.cell
         p
-          | NodeJs/Jade Templates, ES6 JQuery and Plugins on the front end.
+          | NodeJs Jade/Pug Templates, ES6 JQuery and Plugins on the front end.
           | MongoDB as database. Node Kue to process ETL jobs with Empolis with XML/XSLT to integrate Tweddle&apos;s CMS
           | content.
           | A separate microservice was built using Scala/Play for VIN decoding and integration with Chrysler&apos;s
@@ -182,6 +208,194 @@ head
         p.text-left Technologies
       .large-9.medium-9.cell
         p  IOS Swift 
+  .callout
+    .grid-x.grid-padding-x
+      .large-3.medium-3.cell
+        h5
+          | RIIS &ndash; Troy, MI 
+          br
+          a(href='riis.com') riis.com
+      .large-4.medium-4.cell
+        h5 Sr. Developer
+      .large-4.medium-4.cell
+        h5.text-right SEP 2015 - JUL 2016
+      .large-3.medium-3.cell
+        p
+          strong
+            | AIM, Farmington Hills
+            br
+            | Digital Inspector  
+      .large-9.medium-9.cell
+        p
+          | Part of RIIS front on developing AIM’s second generation of their inspection management system. 
+          | With thousands of Inspectors, AIM relied on the team to deliver a responsive, scalable and integrative architecture that 
+          | handles their complex tasks of audit planning, workflows of approval and client’s data feed management. 
+        p
+          | As a Sr. Developer, I contributed to architectural design, supervised and mentored the Jr developers on the level and quality of their craft,
+          | implemented the solutions in both back and front end as well as the ETL with Spring Batch
+          
+      .large-3.medium-3.cell
+        p.text-left Technologies
+      .large-9.medium-9.cell
+        p
+          |  Rest, Angular, Gulp, Javascript, Lodash, Node Js, Sass, Java 8, Spring(Boot, MVC, Batch, Data), 
+          |  Coffee Script, Groovy, Hibernate, Liquibase, Oracle, Graddle, Amazon EC2 and S3. 
+  .callout
+    .grid-x.grid-padding-x
+      .large-3.medium-3.cell
+        h5
+          | Pillar &ndash; Ann Arbor, MI 
+          br
+          a(href='www.accenture.com') accenture.com
+      .large-4.medium-4.cell
+        h5 Sr. Software Craftsman 
+      .large-4.medium-4.cell
+        h5.text-right MAR 2014 - SEP 2015
+      .large-3.medium-3.cell
+        p
+          strong
+            | Ford, Allen Park MI
+            br
+            | GFORCE
+      .large-9.medium-9.cell
+        p
+          | Part of Pillar’s transformation team on the vehicle configuration system, named GFORCE V3. 
+          | This initiative aims to demonstrate to IT Ford how to achieve true rapid development and true scalable systems using TDD, 
+          | micro services and continuous deployment. 
+        p
+          | As a Sr. Craftsman I helped the team with velocity gains, troubleshooting technical problems and integration with partner systems. 
+          
+      .large-3.medium-3.cell
+        p.text-left Technologies
+      .large-9.medium-9.cell
+        p
+          |  Spring Boot(MVC, Batch, Data), AspectJ, Hamcrest, Mockito, JSF, JPA, Hibernate, MSSQL Server, Maven, Nexus, Accurev, Jenkins, Jira and IBM WebSphere.
+
+      .large-3.medium-3.cell
+        p
+          strong
+            | AAA Life, Livonia MI
+            br
+            | ExpressTerm
+      .large-9.medium-9.cell
+        p
+          | As an Agile consultant I was responsible for coaching company developers on Java and Javascript best practices like 
+          | TDD, Design Patterns, SOLID, Programming By Contract among others, as well as contributing to team development 
+          | effort to meet deadlines. 
+          |  In addition, assisted business and management to align priorities on requirements, estimations and deliverables process.
+
+        p
+          | As a Sr. Craftsman I helped the team with velocity gains, troubleshooting technical problems and integration with partner systems. 
+          
+      .large-3.medium-3.cell
+        p.text-left Technologies
+      .large-9.medium-9.cell
+        p
+          |  Hamcrest, Mockito, PowerMock, Jasmine, JSF, EJB 3.0, JMS, JPA, Hibernate, MSSQL Server, Maven, Nexus, SVN, Jenkins, Jira, and IBM WebSphere.
+
+  .callout
+    .grid-x.grid-padding-x
+      .large-3.medium-3.cell
+        h5
+          | GRID (Troy, MI)
+          br
+          a(href='workwithgrid.com') workwithgrid.com
+      .large-4.medium-4.cell
+        h5 Sr. Software Developer
+      .large-4.medium-4.cell
+        h5.text-right Jul 2010 – Mar 2014
+      .large-3.medium-3.cell
+        p
+          strong
+            | Chrysler Information Systems
+      .large-9.medium-9.cell
+        p
+          | Chrysler Wiring Diagrams is a distinguishable dealer support website that provides VIN specific wiring schematics of a vehicle, as opposed to the other all of the other car manufactures which are platform specific. As the initial developer on the project, I designed and executed the implementation of the wiring schematics rendering service. As phase II of the project, I am part of the team building the Authoring Systems, where a set of satellite projects interact in a workflow - from Chrysler Engineers and Suppliers to Diagram Authors - to transform and correct the data for the rendering service to process.
+      .large-3.medium-3.cell
+        p.text-left Technologies
+      .large-9.medium-9.cell
+        p
+          | LessCss, Bootstrap, Ajax, JQuery, JSTL, Velocity, SVG, Spring(MVC/Security/Transactions), JPA, Hibernate, Liquibase, HSQLDB, MySQL, DB2, MongoDB, Maven, Ant, Git, Jenkins, Jira and Trello, Apache, Jetty, Tomcat and IBM WebSphere.
+      .large-3.medium-3.cell
+        p
+          strong
+            | Atlantic Media 
+        p
+          | Tennis.com 
+        p
+          | FacetheFactsUsa.com
+
+      .large-9.medium-9.cell
+        p
+          | GRID partnered with Atlantic Media on the design and development of the second phases of both Tennis and FacetheFacts websites. 
+          | As lead developer, I was responsible for gathering the requirements, integrating web design with server side, 
+          | refactoring and designing new implementation, deploying and fine tuning the websites to support a daily number of 1million visitors. 
+          | Both projects were delivered in very short periods of time. 
+           
+           
+      .large-3.medium-3.cell
+        p.text-left Technologies
+      .large-9.medium-9.cell
+        p
+          | LessCss, jQuery, Python, Django, PostgreSQL, SouthDB, Apache, GIT and Trac, MS ASP, MSSQL Server.
+  .callout
+    .grid-x.grid-padding-x
+      .large-3.medium-3.cell
+        h5
+          | Dishkin
+        p discontinued
+          br 
+          
+      .large-4.medium-4.cell
+        h5 Co-founder CTO 
+      .large-4.medium-4.cell
+        h5.text-right Jan 2011 – Jan 2013
+      .large-3.medium-3.cell
+      .large-9.medium-9.cell
+        p
+          | Dishkin started as a Groupon competitor focused exclusively on the food industry deals in Metro Detroit. 
+          | The business model of the site changed to a take-out/delivery system like GRUB / HUB. 
+          | It had a customer base of 3000 clients. It was discontinued due to lack of investiment. 
+        p
+          | I was responsible for all site development, server maintenance, webpage design and email newsletter. 
+ 
+      .large-3.medium-3.cell
+        p.text-left Technologies
+      .large-9.medium-9.cell
+        p
+          | Spring MVC, Apache Tiles, JQuery, JQueryMobile, Authorize.Net API,  MySQL, JBoss, Tomcat and Jetty.
+  .callout
+    .grid-x.grid-padding-x
+      .large-3.medium-3.cell
+        h5
+          | Cengage Learning 
+          | Farmington Hills, MI
+          br
+          a(href='cengage.com') cengage.com
+      .large-4.medium-4.cell
+        h5 Agile Developer
+      .large-4.medium-4.cell
+        h5.text-right Nov 2009 – Jul 2010
+      .large-3.medium-3.cell
+      .large-9.medium-9.cell
+        p
+          | Worked on three teams that built cengage’s educational web products. 
+          | Part of the hand selected team responsible for generating the base Portlet framework 
+          | that was then used across all projects of the company, with a key role in integrating the framework with Spring and IOC. 
+      .large-3.medium-3.cell
+        p.text-left Technologies
+      .large-9.medium-9.cell
+        p
+          | JQuery, JBoss Portal, Portlets, Restlet ,Spring.
+
+    +job('Budco', 'Application Developer', 'dialog-direct.com', 'MAY 2006 - NOV 2009')
+      +client('Brand Management Platform')
+      +description('Responsible for designing and developing components for the Brand Management Platform, like event processes, workflows and heavy load XML integrations.  ')
+      +client('GM Navigation Disc')
+      +description('As a Lead developer I implemented features from high critical operations for GM China, created through a JSP parser that converted text in custom tags,  and implemented web redesign with friendly user interfaces and I18N support.')
+      +technologies('Utilized Hudson ANT and SVN for CI, JIRA for task tracking, JMeter and Easy Mock(1.0 and 2.0) for testing, Struts, JSTL, Prototype in the web layer,  JBoss and iPlanet as web containers, Spring and Hibernate for middleware, and Oracle 10 as database')
+
+
 script(src='node_modules/jquery/dist/jquery.js')
 script(src='node_modules/what-input/dist/what-input.js')
 script(src='node_modules/foundation-sites/dist/js/foundation.js')
