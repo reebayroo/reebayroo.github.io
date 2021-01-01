@@ -1,18 +1,22 @@
-mixin job(company, title, url, period )
+mixin job(company, title, period, url, descUrl )
   .callout
     .grid-x.grid-padding-x
       .large-3.medium-3.cell
         h5= company
-        a(href=url)=url
+        a(target="blank", href=url)=descUrl
       .large-4.medium-4.cell
         h5= title
       .large-4.medium-4.cell
         h5.text-right= period
       block
-mixin client( client )
+mixin client( client, projectName )
   .large-3.medium-3.cell
     p
-      strong= client
+      strong
+        | #{client}
+      if (projectName)
+        br
+        | #{projectName}
 
 mixin description( desc )
   .large-9.medium-9.cell
@@ -297,7 +301,7 @@ head
     .grid-x.grid-padding-x
       .large-3.medium-3.cell
         h5
-          | GRID (Troy, MI)
+          | GRID &ndash; Troy, MI
           br
           a(href='workwithgrid.com') workwithgrid.com
       .large-4.medium-4.cell
@@ -388,14 +392,26 @@ head
         p
           | JQuery, JBoss Portal, Portlets, Restlet ,Spring.
 
-    +job('Budco', 'Application Developer', 'dialog-direct.com', 'MAY 2006 - NOV 2009')
-      +client('Brand Management Platform')
-      +description('Responsible for designing and developing components for the Brand Management Platform, like event processes, workflows and heavy load XML integrations.  ')
-      +client('GM Navigation Disc')
-      +description('As a Lead developer I implemented features from high critical operations for GM China, created through a JSP parser that converted text in custom tags,  and implemented web redesign with friendly user interfaces and I18N support.')
-      +technologies('Utilized Hudson ANT and SVN for CI, JIRA for task tracking, JMeter and Easy Mock(1.0 and 2.0) for testing, Struts, JSTL, Prototype in the web layer,  JBoss and iPlanet as web containers, Spring and Hibernate for middleware, and Oracle 10 as database')
-
-
+  +job('Budco', 'Application Developer', 'MAY 2006 - NOV 2009', 'http://dialog-direct.com', 'dialog-direct.com')
+    +client('Brand Management Platform')
+    +description('Responsible for designing and developing components for the Brand Management Platform, like event processes, workflows and heavy load XML integrations.  ')
+    +client('GM Navigation Disc')
+    +description('As a Lead developer I implemented features from high critical operations for GM China, created through a JSP parser that converted text in custom tags,  and implemented web redesign with friendly user interfaces and I18N support.')
+    +technologies('Utilized Hudson ANT and SVN for CI, JIRA for task tracking, JMeter and Easy Mock(1.0 and 2.0) for testing, Struts, JSTL, Prototype in the web layer,  JBoss and iPlanet as web containers, Spring and Hibernate for middleware, and Oracle 10 as database')
+  +job('Interlink - Berrien Springs MI', 'Developer', 'July 2005 to Jan 2006',  'http://www.ilsw.com',  'ilsw.com')
+    +client('CM2')
+    +description('Design and development of an ETL tool (Extract Transform and Load) that is extensible with plug-ins for parsers and mappers, with a visual editor  that allows mapping of fields into pdf files to generate reports.')
+    +technologies('Python, wxPython, XML, XSLT and Firebird Database.')
+  +job('Andrews University - Berrien Springs MI', 'Developer', 'Aug 2004 – December 2006',  'http://andrews.edu',  'andrews.edu')
+    +client('Physics Department', '3D Scanner Visualization')
+    +description(' An application that exhibits 3D images of scanned archeological artifacts in OpenGL. ')
+    +technologies('OpenGL, C++, wxWindows ,STL and cppUnit')
+    +client('Physics Department','Time Sheet Journal.')
+    +description('An intranet website that records the summary of categorized work hours and provides analytical reports for the management of department’s budget. ')
+    +technologies('Apache/mod_python, JavaScript and DHTML, Python, XML, Firebird and Linux.')
+    +client('Archaeology Department','Madaba Plains Project')
+    +description('Software that manages the data acquired on archeological digs, providing an off-line mode, user friendly interface.  The data is then remotely synchronized and stored in a central subversion repository with relational integrity.  Also, the application provides integration with Excel, Word and Access allowing the user to analyze and create reports with selected and filtered data.')
+    +technologies('Python 2.5, wxPython, integration with Subversion through pysvn, pyVelocity, WiX and firebird embedded')
 script(src='node_modules/jquery/dist/jquery.js')
 script(src='node_modules/what-input/dist/what-input.js')
 script(src='node_modules/foundation-sites/dist/js/foundation.js')
