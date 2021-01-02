@@ -36,6 +36,8 @@ mixin description( desc )
   .large-9.medium-9.cell
     p= desc
     block
+mixin description2( desc )
+  p= desc
 mixin technologies( desc )
   .large-3.medium-3.cell
     p.text-left Technologies
@@ -89,36 +91,14 @@ head
         h5 Sr. Developer
       .large-4.medium-4.cell
         h5.text-right July 2018 - Current
-      .large-3.medium-3.cell
-        p
-          strong
-            | Vehicle visualizer 
-            br
-            |  (Digital twin)
-      .large-9.medium-9.cell
-        p
-          | Application that produces a vin specific 3D representation of a given vehicle using pre rendered
-          | artifacts
-          | and combining them on demand based on vehicle&rsquo;s connectors and circuits, in less than 30 seconds using
-          | AWS Lambda&apos;s and other AWS technologies. The final version is rendered to different client applications using
-          | SAP 3D SDK api (a wrapper to WebGL).
-      .large-3.medium-3.cell
-        p.text-left Technologies
-      .large-9.medium-9.cell
-        p
-          | SAP 3D SDK, Java 8, Spring 4, AWS Dynamo DB, AWS SNS, AWS Lambdas, Node JS, ES 6,  SQLite, Web Pack and Bootstrap 4
-      .large-3.medium-3.cell
-        p
-          strong Antaris Authoring System Platform 
-      .large-9.medium-9.cell
-        p
-          | I colaborated with the publishing managers to develop new Features that increased the productivity and quality for their teams who are responsible for
-          | publishing 3D locations, Vehicle Metadata and Diagrams to the Mopar Service Library.
-      .large-3.medium-3.cell
-        p.text-left Technologies
-      .large-9.medium-9.cell
-        p
-          | WebPack, Node JS, Es6, Lodash, Mustache Java 8, Kotlin, Spring 4, Spring Boot, MySQL, SVG and DOM
+
+      +client('Vehicle visualizer', '(Digital twin)')
+      +description('Application that produces a vin specific 3D representation of a given vehicle using pre rendered artifacts and combining them on demand based on vehicle&rsquo;s connectors and circuits, in less than 30 seconds using AWS Lambda&apos;s and other AWS technologies. The final version is rendered to different client applications using SAP 3D SDK api (a wrapper to WebGL).')
+      +technologies('SAP 3D SDK, Java 8, Spring 4, AWS Dynamo DB, AWS SNS, AWS Lambdas, Node JS, ES 6,  SQLite, Web Pack and Bootstrap 4')
+      +client('Antaris Authoring System Platform')
+      +description('In colaboration with publishing managers I develop new Features that increased the productivity and quality for their teams who are responsible for authoring 3D locations, Vehicle Metadata and Diagrams to the Mopar Service Library.')
+      +technologies('Bootstrap 4, WebPack, Node JS, Es6, Lodash, Mustache Java 8, Kotlin, Spring 4, Spring Boot, MySQL, SVG and DOM')
+
   .callout
     .grid-x.grid-padding-x
       .large-3.medium-3.cell
@@ -132,72 +112,27 @@ head
         h5 Lead Developer / Research Developer
       .large-4.medium-4.cell
         h5.text-right July 2016 - July 2018
-      .large-3.medium-3.cell
-        p
-          strong
-            | Intelligent Diagnostics 
-            br
-            | (Guided Diagnostics)
-      .large-9.medium-9.cell
-        p
-          | I.D. was designed to signficantly reduce the ammount of time a dealer technician takes in solving car
-          | issues.
-          | It converts the steps defined in Service Manuals into a series of questions and answers, using real time
-          | reading of the vehicle and
-          | analitical decisions to display the possible paths to a solution (DTC/ECU).
-          | I.D.&apos;s was integrated with Empolis: A Cloud Service Knowledge Graph database that would integrate to
+      +client('Intelligent Diagnostics', '(Guided Diagnostics)')
+      +description('I.D. was designed to signficantly reduce the ammount of time a dealer technician takes in solving car issues. It converts the steps defined in Service Manuals into a series of questions and answers, using real time reading of the vehicle and analitical decisions to display the possible paths to a solution (DTC/ECU). I.D.&apos;s was integrated with Empolis: A Cloud Service Knowledge Graph database that would integrate to')
         p
         |           I was the technical lead of a team of two additional developers and a QA.
         |           We successfully delivered the project to production and maintenance mode.
-        
-      .large-3.medium-3.cell
-        p.text-left Technologies
-      .large-9.medium-9.cell
-        p
-          | NodeJs Jade/Pug Templates, ES6 JQuery and Plugins on the front end.
-          | MongoDB as database. Node Kue to process ETL jobs with Empolis with XML/XSLT to integrate Tweddle&apos;s CMS
-          | content.
-          | A separate microservice was built using Scala/Play for VIN decoding and integration with Chrysler&apos;s
-          | Services.
-          | jQuery in the front end with 3D SDK, Java 8, Spring 4, AWS Dynamo DB, AWS SNS, AWS Lambdas, Node JS, ES 6,
-          | Web Pack and Bootstrap 4. Swagger, Travis CI, Ansible and Terraform
-      .large-3.medium-3.cell
-        p
-          strong  TRACER 
-      .large-9.medium-9.cell
-        p
-          | Diagnostics tool tailored for the most common problems in a vehicle assembly line.
+        p  
+      +technologies('NodeJs Jade/Pug Templates, ES6 JQuery and Plugins on the front end. MongoDB as database. Node Kue to process ETL jobs with Empolis with XML/XSLT to integrate with company CMS content. A separate microservice was built using Scala/Play for VIN decoding and integration with Chrysler&apos;s Services. jQuery in the front end with 3D SDK, Java 8, Spring 4, AWS Dynamo DB, AWS SNS, AWS Lambdas, Node JS, ES 6,  Web Pack and Bootstrap 4. Swagger, Travis CI, Ansible and Terraform')
+      +client('TRACER')
+      +description('Diagnostics tool tailored for the most common problems in a vehicle assembly line.')
         p
         |           After Delivering I.D., I joined the team to increase the number of deliverables/features, as requested by technicians using the
         |           prototype in the field.
         p
-      .large-3.medium-3.cell
-        p.text-left Technologies
-      .large-9.medium-9.cell
-        p
-          | Python as server side, React / React Flux on the front end. Swagger,  Travis CI, Docker, Ansible and Terraform
-      .large-3.medium-3.cell
-        p
-          strong Forest River RV 
-      .large-9.medium-9.cell
-        p
-          | As the Alexa in-house expert I developed a concept product for Forest River using Amazon&apos;s Echo Show.
-          | The prototype would integrate Owners Manual to a skill in Echo Show,
-          | allowing the owner to ask questions, see videos or read instructions from the device.
-      .large-3.medium-3.cell
-        p.text-left Technologies
-      .large-9.medium-9.cell
-        p  Es6, Alexa SDK, Aws S3, AWS Dynamo DB 
-      .large-3.medium-3.cell
-        p
-          strong Nissan  
-      .large-9.medium-9.cell
-        p
-          | Prototype of a second version of their Iphone app that is a wrap to Progressive website.
-      .large-3.medium-3.cell
-        p.text-left Technologies
-      .large-9.medium-9.cell
-        p  IOS Swift 
+      +technologies('Python, React / React Flux on the front end. Swagger,  Travis CI, Docker, Ansible and Terraform')
+      +client('Forest River RV ')
+      +description('As the Alexa in-house expert I developed a concept product for Forest River using Amazon\'s Echo Show. The prototype would integrate Owners Manual to a skill in Echo,  allowing the owner to ask questions, see videos or read instructions from the device.')
+      +technologies('Es6, Alexa SDK, Aws S3, AWS Dynamo DB')
+      +client('Nissan')
+      +description('Prototype of a second version of their Iphone app that is a wrap to Progressive website.')
+      +technologies('IOS Swift ')
+
   .callout
     .grid-x.grid-padding-x
       .large-3.medium-3.cell
@@ -209,27 +144,10 @@ head
         h5 Sr. Developer
       .large-4.medium-4.cell
         h5.text-right SEP 2015 - JUL 2016
-      .large-3.medium-3.cell
-        p
-          strong
-            | AIM, Farmington Hills
-            br
-            | Digital Inspector  
-      .large-9.medium-9.cell
-        p
-          | Part of RIIS front on developing AIM’s second generation of their inspection management system. 
-          | With thousands of Inspectors, AIM relied on the team to deliver a responsive, scalable and integrative architecture that 
-          | handles their complex tasks of audit planning, workflows of approval and client’s data feed management. 
-        p
-          | As a Sr. Developer, I contributed to architectural design, supervised and mentored the Jr developers on the level and quality of their craft,
-          | implemented the solutions in both back and front end as well as the ETL with Spring Batch
-          
-      .large-3.medium-3.cell
-        p.text-left Technologies
-      .large-9.medium-9.cell
-        p
-          |  Rest, Angular, Gulp, Javascript, Lodash, Node Js, Sass, Java 8, Spring(Boot, MVC, Batch, Data), 
-          |  Coffee Script, Groovy, Hibernate, Liquibase, Oracle, Graddle, Amazon EC2 and S3. 
+      +client('AIM, Farmington Hills', 'Digital Inspector')
+      +description('Part of RIIS front on developing AIM’s second generation of their inspection management system. With thousands of Inspectors, AIM relied on the team to deliver a responsive, scalable and integrative architecture that handles their complex tasks of audit planning, workflows of approval and client’s data feed management.')
+      +description2('As a Sr. Developer, I contributed to architectural design, supervised and mentored the Jr developers on the level and quality of their craft,implemented the solutions in both back and front end as well as the ETL with Spring Batch')
+      +technologies('Rest, Angular, Gulp, Javascript, Lodash, Node Js, Sass, Java 8, Spring(Boot, MVC, Batch, Data), Coffee Script, Groovy, Hibernate, Liquibase, Oracle, Graddle, Amazon EC2 and S3. ')
   .callout
     .grid-x.grid-padding-x
       .large-3.medium-3.cell
@@ -241,47 +159,15 @@ head
         h5 Sr. Software Craftsman 
       .large-4.medium-4.cell
         h5.text-right MAR 2014 - SEP 2015
-      .large-3.medium-3.cell
-        p
-          strong
-            | Ford, Allen Park MI
-            br
-            | GFORCE
-      .large-9.medium-9.cell
-        p
-          | Part of Pillar’s transformation team on the vehicle configuration system, named GFORCE V3. 
-          | This initiative aims to demonstrate to IT Ford how to achieve true rapid development and true scalable systems using TDD, 
-          | micro services and continuous deployment. 
-        p
-          | As a Sr. Craftsman I helped the team with velocity gains, troubleshooting technical problems and integration with partner systems. 
+      +client('Ford, Allen Park MI', 'GFORCE')
+      +description('Part of Pillar’s transformation team on the vehicle configuration system, named GFORCE V3. This initiative aims to demonstrate to IT Ford how to achieve true rapid development and true scalable systems using TDD,  micro services and continuous deployment. ')
+      +description2('As a Sr. Craftsman I helped the team with velocity gains, troubleshooting technical problems and integration with partner systems. ')
+      +technologies('Spring Boot(MVC, Batch, Data), AspectJ, Hamcrest, Mockito, JSF, JPA, Hibernate, MSSQL Server, Maven, Nexus, Accurev, Jenkins, Jira and IBM WebSphere.')
           
-      .large-3.medium-3.cell
-        p.text-left Technologies
-      .large-9.medium-9.cell
-        p
-          |  Spring Boot(MVC, Batch, Data), AspectJ, Hamcrest, Mockito, JSF, JPA, Hibernate, MSSQL Server, Maven, Nexus, Accurev, Jenkins, Jira and IBM WebSphere.
-
-      .large-3.medium-3.cell
-        p
-          strong
-            | AAA Life, Livonia MI
-            br
-            | ExpressTerm
-      .large-9.medium-9.cell
-        p
-          | As an Agile consultant I was responsible for coaching company developers on Java and Javascript best practices like 
-          | TDD, Design Patterns, SOLID, Programming By Contract among others, as well as contributing to team development 
-          | effort to meet deadlines. 
-          |  In addition, assisted business and management to align priorities on requirements, estimations and deliverables process.
-
-        p
-          | As a Sr. Craftsman I helped the team with velocity gains, troubleshooting technical problems and integration with partner systems. 
-          
-      .large-3.medium-3.cell
-        p.text-left Technologies
-      .large-9.medium-9.cell
-        p
-          |  Hamcrest, Mockito, PowerMock, Jasmine, JSF, EJB 3.0, JMS, JPA, Hibernate, MSSQL Server, Maven, Nexus, SVN, Jenkins, Jira, and IBM WebSphere.
+      +client('AAA Life, Livonia MI', 'ExpressTerm')
+      +description('As an Agile consultant I was responsible for coaching company developers on Java and Javascript best practices like TDD, Design Patterns, SOLID, Programming By Contract among others, as well as contributing to team development effort to meet deadlines.  In addition, assisted business and management to align priorities on requirements, estimations and deliverables process.')
+      +description2('As a Sr. Craftsman I helped the team with velocity gains, troubleshooting technical problems and integration with partner systems. ')
+      +technologies('Hamcrest, Mockito, PowerMock, Jasmine, JSF, EJB 3.0, JMS, JPA, Hibernate, MSSQL Server, Maven, Nexus, SVN, Jenkins, Jira, and IBM WebSphere.')
 
    
   +job('GRID - Troy, MI', 'Sr. Software Developer', 'Jul 2010 – Mar 2014', 'workwithgrid.com')
