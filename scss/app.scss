@@ -4,6 +4,7 @@
 @import 'foundation';
 @import 'motion-ui';
 
+
 // Global styles
 @include foundation-global-styles;
 @include foundation-forms;
@@ -62,3 +63,9 @@
 // Motion UI
 @include motion-ui-transitions;
 @include motion-ui-animations;
+ 
+@media print {
+    .page-break-on-print {
+        page-break-before: always;
+    }    
+}

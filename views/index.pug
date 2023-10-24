@@ -9,14 +9,14 @@ mixin label(labelText)
 mixin labelNotBold(labelText)
   .large-3.medium-3.cell= labelText
 
- 
+
 mixin job(company, title, period, url, descUrl )
   .callout
     .grid-x.grid-padding-x
       .large-3.medium-3.cell
         h5= company
         if (url)
-          a(target="blank", href=url)=descUrl
+          +aLink(url, descUrl)
       .large-4.medium-4.cell
         h5= title
       .large-4.medium-4.cell
@@ -44,6 +44,11 @@ mixin technologies( desc )
   .large-9.medium-9.cell
     p= desc
 
+mixin aLink(href, desc )    
+  a.hide-for-print(href=href)=desc
+  p.show-for-print=desc
+   
+
 doctype html
 head
   meta(charset='utf-8')
@@ -54,14 +59,27 @@ head
 .grid-container
   h4 Pedro Ribeiro 
   .grid-x.grid-padding-x
-    .large-4.medium-4.small-4.cell
+    .large-3.medium-3.small-3.cell.hide-for-print
       p Clarkston, MI
-    .large-4.medium-4.small-4.cell
+    .large-3.medium-3.small-3.cell.hide-for-print
       p.text-center
         a(href='mailto:pedroribeirojr@gmail.com') Email
-    .large-4.medium-4.small-4.cell
+    .large-3.medium-3.small-3.cell.hide-for-print
       p.text-center
         a(href='linkedin.com/in/pedroribeirojr' ) Linked In
+    .large-3.medium-3.small-3.cell.hide-for-print
+      p.text-center
+        a(href='./pedro_ribeiro_resume.pdf' ) Download Resume
+  .grid-x.grid-padding-x
+    .large-4.medium-4.small-4.cell.show-for-print
+      p 
+        | Clarkston, MI
+    .large-4.medium-4.small-4.cell.show-for-print
+      p 
+        | pedroribeirojr@gmail.com
+    .large-4.medium-4.small-4.cell.show-for-print
+      p 
+        | linkedin.com/in/pedroribeirojr
 .grid-container
   +header('Career Highlights')
     +label('29 Years of Experience')
@@ -81,12 +99,13 @@ head
 
     +label('Prototype/Research Developer')
     +description("I spearheaded the development of cutting-edge diagnostics, including the 3D Vehicle Digital Twin. This VIN-specific, 3D image generator delivers tailored visualizations of a vehicle system based on its model, trim, and selected options.")
+.grid-container
   +header('Experience ')
     .large-3.medium-3.cell
       h5
         | Slalom &ndash; Detroit, MI 
         br
-        a(href='') slalom.com
+        +aLink('slalom.com', 'slalom.com')
     .large-4.medium-4.cell
       h5 Architect
     .large-4.medium-4.cell
@@ -110,7 +129,7 @@ head
         h5
           | GRID &ndash; Troy, MI 
           br
-          a(href='') workwithgrid.com
+          +aLink('workwithgrid.com','workwithgrid.com')
       .large-4.medium-4.cell
         h5 Sr. Developer
       .large-4.medium-4.cell
@@ -131,7 +150,7 @@ head
           br
           |  Clinton Twp, MI 
           br
-          a(href='tweddle.com') tweddle.com
+          +aLink('tweddle.com', 'tweedle.com')
       .large-4.medium-4.cell
         h5 Lead Developer / Research Developer
       .large-4.medium-4.cell
@@ -163,7 +182,7 @@ head
         h5
           | RIIS &ndash; Troy, MI 
           br
-          a(href='riis.com') riis.com
+          +aLink('riis.com', 'riis.com')          
       .large-4.medium-4.cell
         h5 Sr. Developer
       .large-4.medium-4.cell
@@ -178,7 +197,8 @@ head
         h5
           | Pillar &ndash; Ann Arbor, MI 
           br
-          a(href='www.accenture.com') accenture.com
+          +aLink('www.accenture.com', 'accenture.com')          
+
       .large-4.medium-4.cell
         h5 Sr. Software Craftsman 
       .large-4.medium-4.cell
