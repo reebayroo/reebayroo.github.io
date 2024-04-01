@@ -3,37 +3,83 @@ mixin header(title)
   .callout
     .grid-x.grid-padding-x
       block
+mixin secondHeader(title)      
+  h4= title
+  block
+
 mixin label(labelText)
   .large-3.medium-3.cell
     strong= labelText
 mixin labelNotBold(labelText)
   .large-3.medium-3.cell= labelText
 
+mixin highlight(desc)
+  .large-9.medium-9
+    p=desc
+
+mixin date(month, year, endMonth, endYear)
+  .large-6.medium-6.cell
+    h5 #{month}/#{year} - Current
+
+mixin company(name, city, state, link)
+    .large-3.medium-3.cell
+      h4
+        | #{name}, #{city}, #{state}  (#{link})
+
+mixin position(title, company, city, state, startMonth, startYear, endMonth, endYear )
+  .callout
+    .grid-x.grid-padding-x
+      .large-6.medium-6.cell
+        h4= title
+        p #{company}, #{city}, #{state}
+      .large-6.medium-6.cell
+        h4.text-right
+          | #{startMonth}/#{startYear} - 
+          if (endYear)
+            | #{endMonth}/#{endYear}
+          else
+            | #{endMonth}
+    .grid-x.grid-padding-x
+      block
 
 mixin job(company, title, period, url, descUrl )
   .callout
     .grid-x.grid-padding-x
-      .large-3.medium-3.cell
+      .large-4.medium-4.cell
+        h5= title
+      .large-6.medium-6.cell
         h5= company
         if (url)
           +aLink(url, descUrl)
       .large-4.medium-4.cell
-        h5= title
-      .large-4.medium-4.cell
         h5.text-right= period
       block
 mixin client( client, projectName )
-  .large-3.medium-3.cell
-    p
+  .large-1.medium-1.cell
+  .large-11.medium-11.cell
+    li
       strong
         | #{client}
       if (projectName)
-        br
-        | #{projectName}
-    block        
+        |, 
+        em #{projectName}
+      | &nbsp;:&nbsp;
+
+      block
+      //-   | #{projectName}
+        
+mixin engagement( desc )
+    | #{desc}
+mixin engagement2( desc )
+    | #{desc}
+    br
+
+mixin techStack( desc )
+    p 
+      em Technologies&nbsp;:&nbsp;
+      | #{desc}
 
 mixin description( desc )
-  .large-9.medium-9.cell
     p= desc
     block
 mixin description2( desc )
@@ -72,8 +118,7 @@ head
         a(href='./pedro_ribeiro_resume.pdf' ) Download Resume
   .grid-x.grid-padding-x
     .large-4.medium-4.small-4.cell.show-for-print
-      p 
-        | Clarkston, MI
+      p 6425 Middle Lk Rd. Clarkston, MI
     .large-4.medium-4.small-4.cell.show-for-print
       p 
         | pedroribeirojr@gmail.com
@@ -82,205 +127,149 @@ head
         | linkedin.com/in/pedroribeirojr
 .grid-container
   +header('Career Highlights')
-    +label('29 Years of Experience')
-    +description(' I\'ve navigated a diverse technological landscape, transitioning from Delphi to Elixir, and from desktop to mobile platforms. This experience has allowed me to bridge various industries, from archeology to health insurance, while remaining deeply connected to the ever-evolving world of technology.')
+    +label('30 Years of Experience')
+    +highlight('As a full stack developer, I have navigated a diverse technological landscape, from the old days of MS-DOS development to Servless Architecture in AWS. This experience has allowed me to bridge various industries, from archeology to health insurance, while remaining connected to the ever-evolving world of technology.')
 
     +label('Stellantis Wiring Diagrams Platform.')
-    +description('Industry-leading vehicle diagnosis software, utilized by Mopar dealers and Chrysler factories across the US, Europe, and Latin America, with tens of thousands of daily active users.')
+    +highlight('Industry-leading vehicle diagnosis software utilized by Mopar dealers and Stellanti\'s factories across the US, Europe, and Latin America, with tens of thousands of daily active users.')
 
     +label('DishKin')
-    +description('Co-Founder, Architect, and Developer of a former local restaurant promotion website in Metro Detroit with 3,000 customers') 
+    +highlight('Co-Founder, Designer, and Developer of a former local restaurant promotion website in Metro Detroit with 3,000 customers') 
 
     +label('Agile / XP Consultant')
-    +description("I've provided mentorship to numerous developers on topics such as Test-Driven Development (TDD), Software Craftsmanship, Functional Programming, SOLID principles, and other valuable principles espoused by industry experts like Martin Fowler and Robert Martin (Uncle Bob).")
+    +highlight("As a metro-detroit resident, I am proud to have been part of former Pillar Technology, a company with a reputation for its Agile and Test-Driven Development (TDD) culture, where I was able to provide mentorship to numerous developers not just on TDD but also on Software Craftsmanship, Functional Programming and SOLID principles.")
 
     +label('Architect and Tech Lead')
-    +description("I possess innate leadership qualities and frequently serve as a point of reference for my team. My inaugural experience as a technical lead dates back to 2000 in Brazil. As a craftsman, I have consistently been a source of inspiration and a collaborative force for those striving to excel in their roles.")
+    +highlight("I possess innate leadership qualities and frequently serve as a point of reference for my team. My inaugural experience as a technical lead dates back to 2000 in Brazil. As a craftsman, I have consistently been a source of inspiration and a collaborative force for those striving to excel in their roles.")
 
-    +label('Prototype/Research Developer')
-    +description("I spearheaded the development of cutting-edge diagnostics, including the 3D Vehicle Digital Twin. This VIN-specific, 3D image generator delivers tailored visualizations of a vehicle system based on its model, trim, and selected options.")
 .grid-container
-  +header('Experience ')
-    .large-3.medium-3.cell
-      h5
-        | Slalom &ndash; Detroit, MI 
-        br
-        +aLink('slalom.com', 'slalom.com')
-    .large-4.medium-4.cell
-      h5 Architect
-    .large-4.medium-4.cell
-      h5.text-right August 2021 - Current
-    +client('Corewell Health', 'Greenback Accumulator Sync')
-    +description("In an initiative to reduce prescription costs for members by providing access to alternative pharmacy locations with more competitive pricing, Corewell Health (formerly Priority Health) collaborated with Greenback Health. Slalom was tasked with creating a system that would seamlessly merge GBH's accumulator synchronization process with the existing prescription provider's Express Scripts system, alongside CH's Health Care Management System, Trizetto Facets. As a Solution Architect, I took the lead in the discovery and design. I employed detailed diagrams to ensure a comprehensive understanding of the current state and the coming modifications, all while managing backlog, agile ceremonies, and engaging in part-time development.")
-
-    +technologies("Microservices with Java 11, Apache Camel, Active MQ, Spring, JAXB, Oracle, Integration Tests with Docker.")
-
-    +client('Corewell Health', 'Priority Well Choice Benefits')
-    +description("PWCB encourages customers to make healthier choices, enabling them to earn points that can reduce their health insurance costs. In my role as a Senior Full Stack Engineer, I designed and developed AWS components to asynchronously collect data from various sources, facilitating the assessment of subscribers' program status.")
-    +technologies("Python Plaform(AWS Python SDK, Pytoolz,Dependency and Packaging with Poetry), AWS Services ( Lambda, Step Functions, Glue, S3, SNS, Cloudwatch, Dynamo DB, Including creation of those components using AWS Cloud Development Kit/CDK)")
-    +client('Route One', 'Fusion Virtual Retailer')
-    +description("Fusion is a car-buying web application, seamlessly integrated with the country's leading dealer management software: Route One's dealer manager. This application, when embedded on any dealer's website, empowers car buyers to choose financing options, apply for financing, obtain Kelly Blue Book trade-in evaluations, and schedule test drives. As a full-stack Sr. engineer, my responsibilities included collaborating with the user experience designers and the architect, mentor junior developers, developing full-fledged web components according to the design, customizing the legacy microservices systems to accommodate new requirements.")
-    +technologies('Angular, NgRX, TypeScript, Node JS, Lodash, Spring Boot, Java 11, Oracle')
-
-
-  .callout
-    .grid-x.grid-padding-x
-      .large-3.medium-3.cell
-        h5
-          | GRID &ndash; Troy, MI 
-          br
-          +aLink('workwithgrid.com','workwithgrid.com')
-      .large-4.medium-4.cell
-        h5 Sr. Developer
-      .large-4.medium-4.cell
-        h5.text-right July 2018 - August 2021
-
+  +secondHeader('Experience ')
+    +position('Solution Architect / Sr. Software Engineer', 'Slalom', 'Detroit', 'MI', '08', '2021', 'Present', '' )
+      +client('Securian', 'Canada Migration')
+        +engagement("As a financial service industry leader, Securian had an impossible task to migrate their US-based services, batch jobs, and databases to Canada in 2 and half months. As the architect and leader of a team of 5 practitioners, I helped the pod identify, test, and manage the risks of the migration on the batch processing front. The project was deployed successfully and on time.")
+        +techStack("Java 11, Spring Batch, PostgreSQL, MS SQL Server")
+      +client('Slalom Internal', 'Flutter accelerator')
+        +engagement("Flutter allows the development of mobile applications for both iOS and Android platforms using one single code base written in Dart. Accelerators projects aim to create the latest prescriptions on key features of development on the platform in order to speed up development for a new engagement: codebase setup and organization, dependency injection, use of API and Database access, theme configuration, device access, unit and integration testing, and other features.")
+        +techStack("Flutter, Dart, Riverpod, Freezed and Isar ")
+      +client('Corewell Health', 'Greenback Accumulator Sync')
+        +engagement("In an initiative to reduce prescription costs for members by providing access to alternative pharmacy locations with more competitive pricing, Corewell Health (formerly Priority Health) collaborated with Greenback Health. Slalom was tasked with creating a system that would seamlessly merge GBH's accumulator synchronization process with the existing prescription provider's Express Scripts system, alongside CH's Health Care Management System, Trizetto Facets. As a Solution Architect, I took the lead in the discovery and design. I employed detailed diagrams to ensure a comprehensive understanding of the current state and the coming modifications, all while managing backlog, agile ceremonies, and engaging in part-time development.")
+        +techStack("Microservices with Java 11, Apache Camel, Active MQ, Spring, JAXB, Oracle, Integration Tests with Docker.")
+      +client('Corewell Health', 'Priority Well Choice Benefits')
+        +engagement("PWCB encourages customers to make healthier choices, enabling them to earn points that can reduce their health insurance costs. In my role as a Senior Full Stack Engineer in thie Cloud Native Application, I designed and developed the AWS components asynchronously collect data from various sources, facilitating the assessment of subscribers' program status.")
+        +techStack("Python Plaform(AWS Python SDK, Pytoolz,Dependency and Packaging with Poetry), AWS Services ( Lambda, Step Functions, Glue, S3, SNS, Cloudwatch, Dynamo DB, including collaboration and mentoring DevOps team on creation of AWS Cloud Development Kit/CDK components)")
+      +client('Route One', 'Fusion Virtual Retailer')
+        +engagement("Fusion is a car-buying web application, seamlessly integrated with the country's leading dealer management software: Route One's dealer manager. When Fusion is embedded on any dealer's website, it empowers car buyers to choose financing options, apply for financing, obtain Kelly Blue Book trade-in evaluations, and schedule test drives. As a full-stack Sr. engineer, my responsibilities included collaborating with the UX designers, DevOps, and architect. Support and give technical advice to junior developers, building full-fledged web components according to the specifications, customizing the legacy microservices systems to accommodate new requirements, and managing technical debt.")
+        +techStack('Angular, NgRX, TypeScript, Node JS, Lodash, Spring Boot, Java 11, Oracle')
+    +position('Sr.Software Engineer', 'GRID', 'Troy', 'MI', '07', '2018', '08', '2021' )
       +client('Vehicle visualizer', '(Digital twin)')
-      +description("Application that produces a vin specific 3D representation of a given vehicle using pre rendered artifacts and combining them on demand based on vehicle's connectors and circuits, in less than 30 seconds using AWS Lambdas, SNS and S3 services. The final version is rendered to different client applications using proprietary wrapper to WebGL.")
-      +technologies(' Java 8, Spring 4, AWS Dynamo DB, AWS SNS, AWS Lambdas, Node JS, ES 6,  SQLite, Web Pack and Bootstrap 4')
+        +engagement("Application that produces a vin specific 3D representation of a given vehicle using pre rendered artifacts and combining them on demand based on vehicle's connectors and circuits, in less than 30 seconds using AWS Lambdas, SNS and S3 services. The final version is rendered to different client applications using proprietary wrapper to WebGL.")
+        +techStack(' Java 8, Spring 4, AWS Dynamo DB, AWS SNS, AWS Lambdas, Node JS, ES 6,  SQLite, Web Pack and Bootstrap 4')
       +client('Antaris Authoring System Platform')
-      +description('In collaboration with publishing managers I develop new Features that increased the productivity and quality for their teams who are responsible for authoring 3D locations, Vehicle Metadata and Diagrams to the Mopar Service Library.')
-      +technologies('Bootstrap 4, WebPack, Node JS, Es6, Lodash, Mustache Java 8, Kotlin, Spring 4, Spring Boot, MySQL, SVG and DOM')
+        +engagement('In collaboration with publishing managers I develop new Features that increased the productivity and quality for their teams who are responsible for authoring 3D locations, Vehicle Metadata and Diagrams to the Mopar Service Library.')
+        +techStack('Bootstrap 4, WebPack, Node JS, Es6, Lodash, Mustache, Java 8, Kotlin, Gradle, Spring 4, Spring Boot, MySQL, SVG and DOM')
+    +position('Lead Developer / Research Developer', 'Tweddle', 'Detroit', 'MI', '07', '2016', '07', '2018' )
+      +client('Intelligent Diagnostics')
+        +engagement("I.D. was designed to significantly reduce the amount of time a dealer technician takes in solving car issues. It converts the steps defined in Service Manuals into a series of questions and answers, using real time reading of the vehicle and analytical decisions to display the possible paths to a solution (DTC/ECU). I.D.'s was integrated with Empolis: A Cloud Service Knowledge Graph database that would integrate to")
+        +techStack("NodeJs Jade/Pug Templates, ES6 JQuery and Plugins on the front end. MongoDB as database. Node Kue to process ETL jobs with Empolis with XML/XSLT to integrate with company CMS content. jQuery in the front end with 3D SDK, Java 8, Spring 4, AWS Dynamo DB, AWS SNS, AWS Lambdas, Node JS, ES 6,  Web Pack and Bootstrap 4. Swagger, Travis CI, Ansible and Terraform")
+      +client('VIN Decoder')
+        +engagement("Microservice responsible for verifying and decoding VINs, using previously cached data or using FCA's (Stelanttis) VIN API ")
+        +techStack("Scala, Play Framework")
 
-  .callout
-    .grid-x.grid-padding-x
-      .large-3.medium-3.cell
-        h5
-          | Tweedle Group 
-          br
-          |  Clinton Twp, MI 
-          br
-          +aLink('tweddle.com', 'tweedle.com')
-      .large-4.medium-4.cell
-        h5 Lead Developer / Research Developer
-      .large-4.medium-4.cell
-        h5.text-right July 2016 - July 2018
-      +client('Intelligent Diagnostics', '(Guided Diagnostics)')
-      +description("I.D. was designed to significantly reduce the amount of time a dealer technician takes in solving car issues. It converts the steps defined in Service Manuals into a series of questions and answers, using real time reading of the vehicle and analytical decisions to display the possible paths to a solution (DTC/ECU). I.D.'s was integrated with Empolis: A Cloud Service Knowledge Graph database that would integrate to")
-        p
-        |           I was the technical lead of a team of two additional developers and a QA.
-        |           We successfully delivered the project to production and maintenance mode.
-        p  
-      +technologies("NodeJs Jade/Pug Templates, ES6 JQuery and Plugins on the front end. MongoDB as database. Node Kue to process ETL jobs with Empolis with XML/XSLT to integrate with company CMS content. A separate microservice was built using Scala/Play for VIN decoding and integration with Chrysler's Services. jQuery in the front end with 3D SDK, Java 8, Spring 4, AWS Dynamo DB, AWS SNS, AWS Lambdas, Node JS, ES 6,  Web Pack and Bootstrap 4. Swagger, Travis CI, Ansible and Terraform")
       +client('TRACER')
-      +description('Diagnostics tool tailored for the most common problems in a vehicle assembly line.')
-        p
-        |           After Delivering I.D., I joined the team to increase the number of deliverables/features, as requested by technicians using the
-        |           prototype in the field.
-        p
-      +technologies('Python, React / Redux, Swagger,  Travis CI, Docker, Ansible and Terraform')
-      +client('Forest River RV ')
-      +description('As the Alexa in-house expert I developed a concept product for Forest River using Amazon\'s Echo Show. The prototype would integrate Owners Manual to a skill in Echo,  allowing the owner to ask questions, see videos or read instructions from the device.')
-      +technologies('Es6, Alexa SDK, Aws S3, AWS Dynamo DB')
+        +engagement("Diagnostics tool tailored for the most common problems in a vehicle assembly line. After Delivering I.D., I joined the team to increase the number of deliverables/features, as requested by technicians using the prototype in the field.")
+        +techStack('Python, React / Redux, Swagger,  Travis CI, Docker, Ansible and Terraform')
+      +client('Forest River RV ', 'Amazon Echo')
+        +engagement('Prototype taht would integrate Owners Manual to a skill in Echo, allowing the owner to ask questions, see videos or read instructions from the device.')
+        +techStack('Es6, Alexa SDK, Aws S3, AWS Dynamo DB')
       +client('Nissan')
-      +description('Prototype of a second version of their Iphone app that is a wrap to Progressive website.')
-      +technologies('IOS Swift ')
-
-  .callout
-    .grid-x.grid-padding-x
-      .large-3.medium-3.cell
-        h5
-          | RIIS &ndash; Troy, MI 
-          br
-          +aLink('riis.com', 'riis.com')          
-      .large-4.medium-4.cell
-        h5 Sr. Developer
-      .large-4.medium-4.cell
-        h5.text-right SEP 2015 - JUL 2016
+        +engagement('Prototype of a second version of their IOS app that is a wrapping a responsive website.')
+        +techStack('IOS Swift ')
+    +position('Sr. Software Developer', 'RIIS', 'Troy', 'MI', '09', '2015', '07', '2016')
       +client('AIM, Farmington Hills', 'Digital Inspector')
-      +description('Part of RIIS front on developing AIM’s second generation of their inspection management system. With thousands of Inspectors, AIM relied on the team to deliver a responsive, scalable and integrative architecture that handles their complex tasks of audit planning, workflows of approval and client’s data feed management.')
-      +description2('As a Sr. Developer, I contributed to architectural design, supervised and mentored the Jr developers on the level and quality of their craft, implemented the solutions in both back and front end as well as the ETL with Spring Batch')
-      +technologies('Rest, Angular, Gulp, Javascript, Lodash, Node Js, Sass, Java 8, Spring(Boot, MVC, Batch, Data), Coffee Script, Groovy, Hibernate, Liquibase, Oracle, Graddle, Amazon EC2 and S3. ')
-  .callout
-    .grid-x.grid-padding-x
-      .large-3.medium-3.cell
-        h5
-          | Pillar &ndash; Ann Arbor, MI 
-          br
-          +aLink('www.accenture.com', 'accenture.com')          
-
-      .large-4.medium-4.cell
-        h5 Sr. Software Craftsman 
-      .large-4.medium-4.cell
-        h5.text-right MAR 2014 - SEP 2015
+        +engagement('Part of RIIS front on developing AIM’s second generation of their inspection management system. With thousands of Inspectors, AIM relied on the team to deliver a responsive, scalable and integrative architecture that handles their complex tasks of audit planning, workflows of approval and client’s data feed management. ')
+        +engagement('As a Sr. Developer, I contributed to architectural design, supervised and mentored the Jr developers on the level and quality of their craft, implemented the solutions in both back and front end as well as batch processing ETL jobs with Spring Batch')
+        +techStack('Rest, Angular, Gulp, Javascript, Lodash, Node Js, Sass, Java 11, Spring(Boot, MVC, Batch, Data), Coffee Script, Groovy, Hibernate, Liquibase, Oracle, Gradle, AWS EC2 and S3 services. ')
+    +position('Sr. Software Craftsman ', 'Pillar Technology', 'Ann Arbor', 'MI', '03', '2014', '09', '2015')
       +client('Ford, Allen Park MI', 'GFORCE')
-      +description('Part of Pillar’s transformation team on the vehicle configuration system, named GFORCE V3. This initiative aims to demonstrate to IT Ford how to achieve true rapid development and true scalable systems using TDD,  micro services and continuous deployment. ')
-      +description2('As a Sr. Craftsman I helped the team with velocity gains, troubleshooting technical problems and integration with partner systems. ')
-      +technologies('Spring Boot(MVC, Batch, Data), AspectJ, Hamcrest, Mockito, JSF, JPA, Hibernate, MSSQL Server, Maven, Nexus, Accurev, Jenkins, Jira and IBM WebSphere.')
+        +engagement('Part of Pillar’s transformation team on the vehicle configuration system, named GFORCE V3. This initiative aims to demonstrate to IT Ford how to achieve true rapid development and true scalable systems using TDD,  micro services and continuous deployment. ')
+        +engagement('As a Sr. Craftsman I helped the team with velocity gains, troubleshooting technical problems and integration with partner systems. ')
+        +techStack('Spring Boot(MVC, Batch, Data), AspectJ, Hamcrest, Mockito, JSF, JPA, Hibernate, MSSQL Server, Maven, Nexus, Accurev, Jenkins, Jira and IBM WebSphere.')
           
       +client('AAA Life, Livonia MI', 'ExpressTerm')
-      +description('As an Agile consultant I was responsible for coaching company developers on Java and Javascript best practices like TDD, Design Patterns, SOLID, Programming By Contract among others, as well as contributing to team development effort to meet deadlines.  In addition, assisted business and management to align priorities on requirements, estimations and deliverables process.')
-      +description2('As a Sr. Craftsman I helped the team with velocity gains, troubleshooting technical problems and integration with partner systems. ')
-      +technologies('Hamcrest, Mockito, PowerMock, Jasmine, JSF, EJB 3.0, JMS, JPA, Hibernate, MSSQL Server, Maven, Nexus, SVN, Jenkins, Jira, and IBM WebSphere.')
+        +engagement('As an Agile consultant I was responsible for coaching company developers on Java and Javascript best practices like TDD, Design Patterns, SOLID, Programming By Contract among others, as well as contributing to team development effort to meet deadlines.  In addition, assisted business and management to align priorities on requirements, estimations and deliverables process.')
+        +engagement('As a Sr. Craftsman I helped the team with velocity gains, troubleshooting technical problems and integration with partner systems. ')
+        +techStack('Hamcrest, Mockito, PowerMock, Jasmine, JSF, EJB 3.0, JMS, JPA, Hibernate, MSSQL Server, Maven, Nexus, SVN, Jenkins, Jira, and IBM WebSphere.')
 
    
-  +job('GRID - Troy, MI', 'Sr. Software Developer', 'Jul 2010 – Mar 2014', 'workwithgrid.com')
-    +client('Chrysler Information Systems')
-    +description('Chrysler Wiring Diagrams is a distinguishable dealer support website that provides VIN specific wiring schematics of a vehicle, as opposed to the other all of the other car manufactures which are platform specific. As the initial developer on the project, I designed and executed the implementation of the wiring schematics rendering service. As phase II of the project, I am part of the team building the Authoring Systems, where a set of satellite projects interact in a workflow - from Chrysler Engineers and Suppliers to Diagram Authors - to transform and correct the data for the rendering service to process.')
-    +technologies('LessCss, Bootstrap, Ajax, JQuery, JSTL, Velocity, SVG, Spring(MVC/Security/Transactions), JPA, Hibernate, Liquibase, HSQLDB, MySQL, DB2, MongoDB, Maven, Ant, Git, Jenkins, Jira and Trello, Apache, Jetty, Tomcat and IBM WebSphere.')
-    +client('Atlantic Media')
-        p Tennis.com 
-        p FacetheFactsUsa.com
-    +description('GRID partnered with Atlantic Media on the design and development of the second phases of both Tennis and FacetheFacts websites.  As lead developer, I was responsible for gathering the requirements, integrating web design with server side,  refactoring and designing new implementation, deploying and fine tuning the websites to support a daily number of 1million visitors.  Both projects were delivered in very short periods of time. ')
-    +technologies('LessCss, jQuery, Python, Django, PostgreSQL, SouthDB, Apache, GIT and Trac, MS ASP, MSSQL Server.')
-
-
-  +job('Dishkin ', 'Co-founder CTO ', 'Jan 2011 – Jan 2013')
-    +labelNotBold('discontinued')
-    +description(' Dishkin started as a Groupon competitor focused exclusively on the food industry deals in Metro Detroit. The business model of the site changed to a take-out/delivery system like GRUB / HUB.  It had a customer base of 3000 clients. It was discontinued due to lack of investment. ')
-    +technologies('Spring MVC, Apache Tiles, JQuery, JQueryMobile, Authorize.Net API,  MySQL, JBoss, Tomcat and Jetty.')
+    +position('Sr. Software Developer', 'GRID', 'Troy', 'MI', '07', '2010', '03', '2014')
+      +client('Chrysler Wiring Diagrams')
+        +engagement('A distinguishable dealer support website that provides VIN specific wiring schematics of a vehicle, as opposed to the other all of the other car manufactures which are platform specific. As the initial developer on the project, I designed and executed the implementation of the wiring schematics rendering service. As phase II of the project, I am part of the team building the Authoring Systems, where a set of satellite projects interact in a workflow - from Chrysler Engineers and Suppliers to Diagram Authors - to transform and correct the data for the rendering service to process.')
+        +techStack('LessCss, Bootstrap, Ajax, JQuery, JSTL, Velocity, SVG, Spring(MVC/Security/Transactions), JPA, Hibernate, Liquibase, HSQLDB, MySQL, DB2, MongoDB, Maven, Ant, Git, Jenkins, Jira and Trello, Apache, Jetty, Tomcat and IBM WebSphere.')
+      +client('Atlantic Media', 'Tennis.com')
+        +engagement('GRID partnered with Atlantic Media on the design and development of the second phases of Tennis.com. As lead developer, I was responsible for gathering the requirements, integrating web design with server side,  refactoring and designing new implementation, deploying and fine tuning the websites to support a daily number of 1million visitors. ')
+        +techStack('LessCss, jQuery, Python, Django, PostgreSQL, SouthDB, Apache, GIT and Trac, MS ASP, MSSQL Server.')
+    +position('Co-founder CTO ', 'Dishkin - discontinued', 'Troy', 'MI', '07','2011', '01','2013')
+      +client('Restaurant Deals')
+        +engagement('Dishkin started as a Groupon competitor focused exclusively on the food industry deals in Metro Detroit. The business model of the site changed to a take-out/delivery system like GRUB / HUB.  It had a customer base of 3000 clients. It was discontinued due to lack of investment. ')
+        +techStack('Spring MVC, Apache Tiles, Less CSS, JQuery, JQueryMobile, Responsive Design, Authorize.Net API,  MySQL, JBoss, Tomcat and Jetty.')
           
-  +job('Cengage Learning', 'Agile Developer', 'Nov 2009 – Jul 2010', 'http://cengage.com', 'cengage.com')
-    +client('')
-    +description('Worked on three teams that built cengage’s educational web products.  Part of the hand selected team responsible for generating the base Portlet framework  that was then used across all projects of the company, with a key role in integrating the framework with Spring and IOC. ')
-    +technologies('JQuery, JBoss Portal, Portlets, Restlets, Spring.')
+    +position('Cengage Learning', 'Agile Developer', 'Farmington Hills', 'MI', '09', '2009', '07', '2010')
+      +client('Online Educational Products')
+        +engagement('Part of the hand selected team responsible for generating the base Portlet framework that was then used across all library educational projects of the company, with a key role in integrating the framework with Spring and IOC. ')
+        +techStack('JQuery, JBoss Portal, Portlets, Restlets, Spring, XPath, XSLT')
 
-  +job('Budco', 'Application Developer', 'MAY 2006 - NOV 2009', 'http://dialog-direct.com', 'dialog-direct.com')
-    +client('Brand Management Platform')
-    +description('Responsible for designing and developing components for the Brand Management Platform, like event processes, workflows and heavy load XML integrations.  ')
-    +client('GM Navigation Disc')
-    +description('As a Lead developer I implemented features from high critical operations for GM China, created through a JSP parser that converted text in custom tags,  and implemented web redesign with friendly user interfaces and I18N support.')
-    +technologies('Utilized Hudson ANT and SVN for CI, JIRA for task tracking, JMeter and Easy Mock(1.0 and 2.0) for testing, Struts, JSTL, Prototype in the web layer,  JBoss and iPlanet as web containers, Spring and Hibernate for middleware, and Oracle 10 as database')
-  +job('Interlink - Berrien Springs MI', 'Developer', 'July 2005 to Jan 2006',  'http://www.ilsw.com',  'ilsw.com')
-    +client('CM2')
-    +description('Design and development of an ETL tool (Extract Transform and Load) that is extensible with plug-ins for parsers and mappers, with a visual editor  that allows mapping of fields into pdf files to generate reports.')
-    +technologies('Python, wxPython, XML, XSLT and Firebird Database.')
-  +job('Andrews University - Berrien Springs MI', 'Developer', 'Aug 2004 – December 2006',  'http://andrews.edu',  'andrews.edu')
-    +client('Physics Department', '3D Scanner Visualization')
-    +description(' An application that exhibits 3D images of scanned archeological artifacts in OpenGL. ')
-    +technologies('OpenGL, C++, wxWindows ,STL and cppUnit')
-    +client('Physics Department','Time Sheet Journal.')
-    +description('An intranet website that records the summary of categorized work hours and provides analytical reports for the management of department’s budget. ')
-    +technologies('Apache/mod_python, JavaScript and DHTML, Python, XML, Firebird and Linux.')
-    +client('Archaeology Department','Madaba Plains Project')
-    +description('Software that manages the data acquired on archeological digs, providing an off-line mode, user friendly interface.  The data is then remotely synchronized and stored in a central subversion repository with relational integrity.  Also, the application provides integration with Excel, Word and Access allowing the user to analyze and create reports with selected and filtered data.')
-    +technologies('Python 2.5, wxPython, integration with Subversion through pysvn, pyVelocity, WiX and firebird embedded')
-  h4 Experience in Brazil 
-  +job('Trust Consultants', 'Lead Developer / Consultant', 'JUN 2002 - JUN 2004', 'http://www.trust.com.br', 'trust.com.br')
-    +client('Bearing Point', 'Oracle Exchange OEX')
-    +description(' Customization of Oracle Exchange (OEX)’s modules and development of Integration between OEX and SAP for the National Steel Manufacturing Company of Brazil (CSN). ')
-    +technologies('JSP/ Java Servlets, Oracle Web Methods as ETL tool and Oracle/PLSQL. ')   
-    +client('Nokia', 'Code Blood Project')
-    +description('website for open source development of mobile software.  It provided services to the open source community similar to sourceforge.net: code repository, internet hosting, forums and mailing lists.  ')
-    +technologies('Struts / JSTL/ JBOSS (EJB/CMP’s), XDoclets / Ant / Cruise Control and PostgreSQL Database ')
-    +client('Gemco bematech.com.br')
-    +description('Swing Java application that controls supermarkets’ cashier register using a Linux terminal.  Creation of libraries and Java classes to integrate with Linux libraries for Electronic Fund Transfer')
-    +technologies('Java Native Interfaces-JNI.  Development of C++ Library to integrated with JNI proxy classes.')
+    +position('Lead Application Developer', 'Budco (Dialog Direct)', 'Highland Park', 'MI', '05', '2007', '11', '2009')
+      +client('Brand Management Platform')
+        +engagement('Responsible for designing and developing components for the Brand Management Platform, like event processes, workflows and heavy load XML integrations.  ')
+      +client('GM Navigation Disc')
+        +engagement('As a Lead developer I implemented features from high critical operations for GM China, created through a JSP parser that converted text in custom tags,  and implemented web redesign with friendly user interfaces and I18N support.')
+        +techStack('ANT, Subversion, Jenkins, JMeter, Easy Mock(1.0 and 2.0), Apache Struts, JSTL, PrototypeJs,  JBoss, Spring Template, Hibernate, Oracle 10, XLSLT, XPath, XML, Dom')
+    +position('Developer', 'Interlink', 'Berrien Springs', 'MI', '07', '2005', '03', '2007')
+      +client('CM2')
+        +engagement('Design and development of an ETL tool (Extract Transform and Load) that is extensible with plug-ins for parsers and mappers, with a visual editor  that allows mapping of fields into pdf files to generate reports.')
+        +techStack('Python, wxPython, XML, XSLT and Firebird Database.')
+    +position('Developer', 'Andrews University', 'Berrien Springs', 'MI', '08', '2004', '12', '2006')
+      +client('Physics Department', '3D Scanner Visualization')
+        +engagement(' An application that exhibits 3D images of scanned archeological artifacts in OpenGL. ')
+        +techStack('OpenGL, C++, wxWindows ,STL and cppUnit')
+      +client('Physics Department','Time Sheet Journal.')
+        +engagement('An intranet website that records the summary of categorized work hours and provides analytical reports for the management of department’s budget. ')
+        +techStack('Apache/mod_python, JavaScript and DHTML, Python, XML, Firebird and Linux.')
+      +client('Archaeology Department','Madaba Plains Project')
+        +engagement('Software that manages the data acquired on archeological digs, providing an off-line mode, user friendly interface.  The data is then remotely synchronized and stored in a central subversion repository with relational integrity.  Also, the application provides integration with Excel, Word and Access allowing the user to analyze and create reports with selected and filtered data.')
+        +techStack('Python 2.5, wxPython, integration with Subversion through pysvn, pyVelocity, WiX and firebird embedded')
+  +secondHeader("Experience in Brazil")
+    +position('Lead Developer / Consultant', 'Trust Consultants', 'Sao Paulo', 'Brazil', '06', '2002', '07', '2004')
+      +client('Bearing Point', 'Oracle Exchange OEX')
+        +engagement(' Customization of Oracle Exchange (OEX)’s modules and development of Integration between OEX and SAP for the National Steel Manufacturing Company of Brazil (CSN). ')
+        +techStack('JSP/ Java Servlets, Oracle Web Methods as ETL tool and Oracle/PLSQL. ')   
+      +client('Nokia', 'Code Blood Project')
+        +engagement('website for open source development of mobile software.  It provided services to the open source community similar to sourceforge.net: code repository, internet hosting, forums and mailing lists.  ')
+        +techStack('Struts / JSTL/ JBOSS (EJB/CMP’s), XDoclets / Ant / Cruise Control and PostgreSQL Database ')
+      +client('Gemco bematech.com.br')
+        +engagement('Swing Java application that controls supermarkets’ cashier register using a Linux terminal.  Creation of libraries and Java classes to integrate with Linux libraries for Electronic Fund Transfer')
+        +techStack('Java Native Interfaces-JNI.  Development of C++ Library to integrated with JNI proxy classes.')
 
-  +job('Vesta Technologies', 'Developer ',  'Jan 2000 – June 2002', '', '')
-    +client('Vesta Maket')
-    +description('An e-procurement platform from Vesta Technologies serving main corporations of Brazil such as Embratel, Serpro and Votorantim of Brazil.  Vesta Market offered supply chain and RFQ among other e-procurement features.  As a developer, I constructed rich-client web interfaces with MS VB Web-Classes, client and server JavaScript, and maintained C++ COM/ATL Objects.  I was also a deployment lead responsible for build and deployment automation using VBScript and J++ applications.')
-  h4 Education and Certifications
-  .callout
-    .grid-x.grid-padding-x
+    +position('Developer', 'Vesta Technologies', 'Sao Paulo', 'Brazil', '01', '2000', '06', '2002')
+      +client('Vesta Maket')
+        +engagement('An e-procurement platform from Vesta Technologies serving main corporations of Brazil such as Embratel, Serpro and Votorantim of Brazil. ')
+        +techStack('MS VB Web-Classes, client and server JavaScript, and maintained C++ COM/ATL Objects. ')
+    +position('Developer', 'Ibelli Fainzilberg', 'Sao Paulo', 'Brazil', '05', '1995', '12', '1999')
+      +client('LIBS Pharmaceutic')
+        +engagement('Sales Rep Scheduler desktop application ')
+        +techStack('Delphi, MS Sql Server')
+
+  +header("Education and Certifications")
+      +client('AWS Certified Cloud Practitioner')
+        +engagement2('January 2024')
       +client('Java Certified Programmer')
-      +description('JDK 1.3.  Aug/2002')
+        +engagement2('JDK 1.3.  August 2002')
       +client('MCP 70-315')
-      +description('Developing and Implementing Web Applications with Microsoft Visual C# .NET – Feb/2007')
+        +engagement2('Developing and Implementing Web Applications with Microsoft Visual C# .NET – Feb/2007')
       +client('University of Michigan','Dearborn')
-      +description('Junior year in Physics and Mathematics.')
+        +engagement2('Junior year in Physics and Mathematics.')
       +client('Federal Technical School')
-      +description('São Paulo Brazil, Data Processing – 1994')
+        +engagement2('São Paulo Brazil, Data Processing, Computer Science Curriculum – 1994')
 
 script(src='node_modules/jquery/dist/jquery.js')
 script(src='node_modules/what-input/dist/what-input.js')
