@@ -94,13 +94,126 @@
                         "projectName": "Digital twin",
                         "businessDesc": "Application that produces a vin specific 3D representation of a given vehicle using pre rendered artifacts and combining them on demand based on vehicle's connectors and circuits, in less than 30 seconds using AWS Lambdas, SNS and S3 services. The final version is rendered to different client applications using proprietary wrapper to WebGL.",
                         "techStack": "Java 11, Spring 4, AWS Dynamo DB, AWS SNS, AWS Lambdas, Node.js, ES6, SQLite, Web Pack and Bootstrap 4"
-                    }, 
+                    },
                     {
-                        "name":"Antaris Systems",
-                        "projectName":"Authoring Platform",
-                        "businessDesc":"In collaboration with publishing managers I develop new Features that increased the productivity and quality for their teams who are responsible for authoring 3D locations, Vehicle Metadata and Diagrams to the Mopar Service Library.",
-                        "techStack":"Bootstrap 4, WebPack, Node.js, Es6, Lodash, Mustache, Java 11, Kotlin, Gradle, Spring 4, Spring Boot, MySQL, SVG and DOM"}
-            
+                        "name": "Antaris Systems",
+                        "projectName": "Authoring Platform",
+                        "businessDesc": "In collaboration with publishing managers I develop new Features that increased the productivity and quality for their teams who are responsible for authoring 3D locations, Vehicle Metadata and Diagrams to the Mopar Service Library.",
+                        "techStack": "Bootstrap 4, WebPack, Node.js, Es6, Lodash, Mustache, Java 11, Kotlin, Gradle, Spring 4, Spring Boot, MySQL, SVG and DOM"
+                    }
+                ]
+            },
+            {
+                "title": "Lead Developer / Research Developer",
+                "company": "Tweddle",
+                "city": "Detroit",
+                "state": "MI",
+                "startMonth": "07",
+                "startYear": "2016",
+                "endMonth": "07",
+                "endYear": "2018",
+                "clients": [
+                    {
+                        "name": "Intelligent Diagnostics",
+                        "projectName": "",
+                        "businessDesc": "I.D. was designed to significantly reduce the amount of time a dealer technician takes in solving car issues. It converts the steps defined in Service Manuals into a series of questions and answers, using real time reading of the vehicle and analytical decisions to display the possible paths to a solution (DTC/ECU). I.D.'s was integrated with Empolis: A Cloud Service Knowledge Graph database that would integrate to",
+                        "techStack": "Node.js, Jade/Pug Templates, ES6 JQuery and Plugins on the front end. MongoDB as database. Node Kue to process ETL jobs with Empolis with XML/XSLT to integrate with company CMS content. jQuery in the front end with 3D SDK, Java 8, Spring 4, AWS Dynamo DB, AWS SNS, AWS Lambdas, Node.js, ES 6,  Web Pack and Bootstrap 4. Swagger, Travis CI, Ansible and Terraform"
+                    },
+                    {
+                        "name": "VIN Decoder",
+                        "projectName": "",
+                        "businessDesc": "Microservice responsible for verifying and decoding VINs, using previously cached data or using FCA's (Stelanttis) VIN API",
+                        "techStack": "Scala, Play Framework"
+                    },
+                    {
+                        "name": "TRACER",
+                        "projectName": "",
+                        "businessDesc": "Diagnostics tool tailored for the most common problems in a vehicle assembly line. After Delivering I.D., I joined the team to increase the number of deliverables/features, as requested by technicians using the prototype in the field.",
+                        "techStack": "Python, React / Redux, Swagger,  Travis CI, Docker, Ansible and Terraform"
+                    },
+                    {
+                        "name": "Forest River RV ",
+                        "projectName": "Amazon Echo",
+                        "businessDesc": "Prototype that would integrate Owners Manual to a skill in Echo, allowing the owner to ask questions, see videos or read instructions from the device.",
+                        "techStack": "Es6, Alexa SDK, Aws S3, AWS Dynamo DB"
+                    }
+                ]
+            },
+            {
+                "title": "Sr. Software Developer",
+                "company": "RIIS",
+                "city": "Troy",
+                "state": "MI",
+                "startMonth": "09",
+                "startYear": "2015",
+                "endMonth": "07",
+                "endYear": "2016",
+                "clients": [
+                    {
+                        "name": "AIM, Farmington Hills",
+                        "projectName": "Digital Inspector",
+                        "businessDesc": "Part of RIIS front on developing AIM’s second generation of their inspection management system. With thousands of Inspectors, AIM relied on the team to deliver a responsive, scalable and integrative architecture that handles their complex tasks of audit planning, workflows of approval and client’s data feed management. As a Sr. Developer, I contributed to architectural design, supervised and mentored the Jr developers on the level and quality of their craft, implemented the solutions in both back and front end as well as batch processing ETL jobs with Spring Batch",
+                        "techStack": "Rest, Angular, Gulp, Javascript, Lodash, Node.js, Sass, Java 11, Spring(Boot, MVC, Batch, Data), Coffee Script, Groovy, Hibernate, Liquibase, Oracle, Gradle, AWS EC2 and S3 services."
+                    }
+                ]
+            },
+            {
+                "title": "Sr. Software Craftsman",
+                "company": "Pillar Technology",
+                "city": "Ann Arbor",
+                "state": "MI",
+                "startMonth": "03",
+                "startYear": "2014",
+                "endMonth": "09",
+                "endYear": "2015",
+                "clients": [
+                    {
+                        "name": "Ford, Allen Park MI",
+                        "projectName": "GFORCE",
+                        "businessDesc": "Part of Pillar’s transformation team on the vehicle configuration system, named GFORCE V3. This initiative aims to demonstrate to IT Ford how to achieve true rapid development and true scalable systems using TDD,  micro services and continuous deployment. As a Sr. Craftsman I helped the team with velocity gains, troubleshooting technical problems and integration with partner systems.",
+                        "techStack": "Spring Boot(MVC, Batch, Data), AspectJ, Hamcrest, Mockito, JSF, JPA, Hibernate, MSSQL Server, Maven, Nexus, Accurev, Jenkins, Jira and IBM WebSphere."
+                    }
+                ]
+            },
+            {
+                "title": "Sr. Software Developer",
+                "company": "GRID",
+                "city": "Troy",
+                "state": "MI",
+                "startMonth": "07",
+                "startYear": "2010",
+                "endMonth": "03",
+                "endYear": "2014",
+                "clients": [
+                    {
+                        "name": "Chrysler Wiring Diagrams",
+                        "projectName": "Service Library",
+                        "businessDesc": "A distinguishable dealer support website that provides VIN specific wiring schematics of a vehicle, as opposed to the other all of the other car manufactures which are platform specific. As the initial developer on the project, I designed and executed the implementation of the wiring schematics rendering service. As phase II of the project, I am part of the team building the Authoring Systems, where a set of satellite projects interact in a workflow - from Chrysler Engineers and Suppliers to Diagram Authors - to transform and correct the data for the rendering service to process.",
+                        "techStack": "LessCss, Bootstrap, Ajax, JQuery, JSTL, Velocity, SVG, Spring(MVC/Security/Transactions), JPA, Hibernate, Liquibase, HSQLDB, MySQL, DB2, MongoDB, Maven, Ant, Git, Jenkins, Jira and Trello, Apache, Jetty, Tomcat and IBM WebSphere."
+                    },
+                    {
+                        "name": "Atlantic Media",
+                        "projectName": "Tennis.com",
+                        "businessDesc": "GRID partnered with Atlantic Media on the design and development of the second phases of Tennis.com. As lead developer, I was responsible for gathering the requirements, integrating web design with server side,  refactoring and designing new implementation, deploying and fine tuning the websites to support a daily number of 1million visitors.",
+                        "techStack": "LessCss, jQuery, Python, Django, PostgreSQL, SouthDB, Apache, GIT and Trac, MS ASP, MSSQL Server."
+                    }
+                ]
+            },
+            {
+                "title": "Co-founder CTO",
+                "company": "Dishkin",
+                "city": "Troy",
+                "state": "MI",
+                "startMonth": "07",
+                "startYear": "2011",
+                "endMonth": "01",
+                "endYear": "2013",
+                "clients": [
+                    {
+                        "name":"Restaurant Deals",
+                        "projectName":"",
+                        "businessDesc":"Dishkin started as a Groupon competitor focused exclusively on the food industry deals in Metro Detroit. The business model of the site changed to a take-out/delivery system like GRUB / HUB.  It had a customer base of 3000 clients. It was discontinued due to lack of investment.",
+                        "techStack":"Spring MVC, Apache Tiles, Less CSS, JQuery, JQueryMobile, Responsive Design, Authorize.Net API,  MySQL, JBoss, Tomcat and Jetty."}
                 ]
             }
         ]
