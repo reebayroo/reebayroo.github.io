@@ -1,8 +1,11 @@
 {
     "info": {
         "fullName": "Pedro Ribeiro",
+        "address": "6425 Middle Lk Rd.",
+        "email": "pedroribeirojr@gmail.com",
         "city": "Clarskton",
-        "state": "MI"
+        "state": "MI",
+        "linkedInHandle": "pedroribeirojr"
     },
     "highlights": [
         {
@@ -25,5 +28,81 @@
             "label": "Hands on Tech Lead",
             "description": "I possess innate leadership qualities and frequently serve as a point of reference for my team. My inaugural experience as a technical lead dates back to 2000 in Brazil. As a craftsman, I have consistently been a source of inspiration and a collaborative force for those striving to excel in their roles."
         }
-    ]
+    ],
+    "experience": {
+        "positions": [
+            {
+                "title": "Solution Architect / Sr. Software Engineer",
+                "company": "Slalom",
+                "city": "Detroit",
+                "state": "MI",
+                "startMonth": "08",
+                "startYear": "2021",
+                "endMonth": "Present",
+                "endYear": "",
+                "clients": [
+                    {
+                        "name": "Cabinet Works Group",
+                        "projectName": "Marketplace",
+                        "businessDesc": "As the industry leader manufacturer of kitchen cabinets in the country, CWG through this engagement, aimed to centralize the multiple ERP systems acquired over the years into a single marketplace where orders were placed and tracked. As an individual contributor, I was responsible for the ETL processes integrating multiple database streams into a single unified database in Azure.",
+                        "techStack": "C#, .net Entity Framework Core, Azure Functions, Azure Service Bus Triggers, Automapper, Polly, Moq,  Azure Cosmos DB, Oracle and MsSQL Server"
+                    },
+                    {
+                        "name": "Securian",
+                        "projectName": "Canada Database Migration",
+                        "businessDesc": "As a financial service industry leader, Securian had an impossible task to migrate their US-based services, batch jobs, and databases to Canada in 2 and half months. As the architect and leader of a team of 5 practitioners, I helped the pod identify, test, and manage the risks of the migration on the batch processing front. The project was deployed successfully and on time.",
+                        "techStack": "Java 11, Spring Batch, PostgreSQL, MS SQL Server"
+                    },
+                    {
+                        "name": "Slalom Internal",
+                        "projectName": "Flutter accelerator",
+                        "businessDesc": "Flutter allows the development of mobile applications for both iOS and Android platforms using one single code base written in Dart. Accelerators projects aim to create the latest prescriptions on key features of development on the platform in order to speed up development for a new engagement: codebase setup and organization, dependency injection, use of API and Database access, theme configuration, device access, unit and integration testing, and other features.",
+                        "techStack": "Flutter, Dart, Riverpod, Freezed and Isar Database"
+                    },
+                    {
+                        "name": "Corewell Health",
+                        "projectName": "Greenback Accumulator Sync",
+                        "businessDesc": "In an initiative to reduce prescription costs for members by providing access to alternative pharmacy locations with more competitive pricing, Corewell Health (formerly Priority Health) collaborated with Greenback Health. Slalom was tasked with creating a system that would seamlessly merge GBH's accumulator synchronization process with the existing prescription provider's Express Scripts system, alongside CH's Health Care Management System, Trizetto Facets. As a Solution Architect, I took the lead in the discovery and design. I employed detailed diagrams to ensure a comprehensive understanding of the current state and the coming modifications, all while managing backlog, agile ceremonies, and engaging in part-time development.",
+                        "techStack": "Microservices with Java 11, Apache Camel, Active MQ, Spring, JAXB, Oracle, RedHat OpenShift Kubernetes, Integration Tests with Docker."
+                    },
+                    {
+                        "name": "Corewell Health",
+                        "projectName": "Priority Well Choice Benefits",
+                        "businessDesc": "PWCB encourages customers to make healthier choices, enabling them to earn points that can reduce their health insurance costs. In my role as a Senior Full Stack Engineer in thie Cloud Native Application, I designed and developed the AWS components asynchronously collect data from various sources, facilitating the assessment of subscribers' program status.",
+                        "techStack": "Python Plaform(AWS Python SDK, Pytoolz,Dependency and Packaging with Poetry), AWS Services ( Lambda, Step Functions, Glue, S3, SNS, Cloudwatch, Dynamo DB, including collaboration and mentoring DevOps team on creation of AWS Cloud Development Kit/CDK components)"
+                    },
+                    {
+                        "name": "Route One",
+                        "projectName": "Fusion Virtual Retailer",
+                        "businessDesc": "Fusion is a car-buying web application, seamlessly integrated with the country's leading dealer management software: Route One's dealer manager. When Fusion is embedded on any dealer's website, it empowers car buyers to choose financing options, apply for financing, obtain Kelly Blue Book trade-in evaluations, and schedule test drives. As a full-stack Sr. engineer, my responsibilities included collaborating with the UX designers, DevOps, and architect. Support and give technical advice to junior developers, building full-fledged web components according to the specifications, customizing the legacy microservices systems to accommodate new requirements, and managing technical debt.",
+                        "techStack": "Angular, NgRX, TypeScript, Node.js, Lodash, Spring Boot, Java 11, Oracle"
+                    }
+                ]
+            },
+            {
+                "title": "Sr. Software Engineer",
+                "company": "GRID",
+                "city": "Troy",
+                "state": "MI",
+                "startMonth": "07",
+                "startYear": "2018",
+                "endMonth": "08",
+                "endYear": "2021",
+                "clients": [
+                    {
+                        "name": "Vehicle visualizer",
+                        "projectName": "Digital twin",
+                        "businessDesc": "Application that produces a vin specific 3D representation of a given vehicle using pre rendered artifacts and combining them on demand based on vehicle's connectors and circuits, in less than 30 seconds using AWS Lambdas, SNS and S3 services. The final version is rendered to different client applications using proprietary wrapper to WebGL.",
+                        "techStack": "Java 11, Spring 4, AWS Dynamo DB, AWS SNS, AWS Lambdas, Node.js, ES6, SQLite, Web Pack and Bootstrap 4"
+                    }, 
+                    {
+                        "name":"Antaris Systems",
+                        "projectName":"Authoring Platform",
+                        "businessDesc":"In collaboration with publishing managers I develop new Features that increased the productivity and quality for their teams who are responsible for authoring 3D locations, Vehicle Metadata and Diagrams to the Mopar Service Library.",
+                        "techStack":"Bootstrap 4, WebPack, Node.js, Es6, Lodash, Mustache, Java 11, Kotlin, Gradle, Spring 4, Spring Boot, MySQL, SVG and DOM"}
+            
+                ]
+            }
+        ]
+    }
 }

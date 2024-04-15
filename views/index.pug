@@ -110,22 +110,22 @@ head
       p #{info.city}, #{info.state}
     .large-3.medium-3.small-3.cell.hide-for-print
       p.text-center
-        a(href='mailto:pedroribeirojr@gmail.com') Email
+        a(href='mailto:' + info.email) Email
     .large-3.medium-3.small-3.cell.hide-for-print
       p.text-center
-        a(href='http://linkedin.com/in/pedroribeirojr' target="__blank") LinkedIn
+        a(href='http://linkedin.com/in'+ info.linkedInHandle, target="__blank") LinkedIn
     .large-3.medium-3.small-3.cell.hide-for-print
       p.text-center
         a(href='./pedro_ribeiro_resume.pdf' ) Download Resume
   .grid-x.grid-padding-x
     .large-4.medium-4.small-4.cell.show-for-print
-      p 6425 Middle Lk Rd. Clarkston, MI
+      p #{info.address} #{info.city}, #{info.state}
     .large-4.medium-4.small-4.cell.show-for-print
       p 
-        | pedroribeirojr@gmail.com
+        | #{info.email}
     .large-4.medium-4.small-4.cell.show-for-print
       p 
-        | linkedin.com/in/pedroribeirojr
+        | linkedin.com/in/#{info.linkedInHandle}
 .grid-container
   +header('Career Highlights')
     each h in highlights
@@ -135,36 +135,16 @@ head
 
 .grid-container
   +secondHeader('Experience ')
-    +position('Solution Architect / Sr. Software Engineer', 'Slalom', 'Detroit', 'MI', '08', '2021', 'Present', '' )
-      +client('Cabinet Works Group', 'Marketplace')
-        +engagement("As the industry leader manufacturer of kitchen cabinets in the country, CWG through this engagement, aimed to centralize the multiple ERP systems acquired over the years into a single marketplace where orders were placed and tracked. As an individual contributor, I was responsible for the ETL processes integrating multiple database streams into a single unified database in Azure.")
-        +techStack("C#, .net Entity Framework Core, Azure Functions, Azure Service Bus Triggers, Automapper, Polly, Moq,  Azure Cosmos DB, Oracle and MsSQL Server")
-      +client('Securian', 'Canada Migration')
-        +engagement("As a financial service industry leader, Securian had an impossible task to migrate their US-based services, batch jobs, and databases to Canada in 2 and half months. As the architect and leader of a team of 5 practitioners, I helped the pod identify, test, and manage the risks of the migration on the batch processing front. The project was deployed successfully and on time.")
-        +techStack("Java 11, Spring Batch, PostgreSQL, MS SQL Server")
-      +client('Slalom Internal', 'Flutter accelerator')
-        +engagement("Flutter allows the development of mobile applications for both iOS and Android platforms using one single code base written in Dart. Accelerators projects aim to create the latest prescriptions on key features of development on the platform in order to speed up development for a new engagement: codebase setup and organization, dependency injection, use of API and Database access, theme configuration, device access, unit and integration testing, and other features.")
-        +techStack("Flutter, Dart, Riverpod, Freezed and Isar ")
-      +client('Corewell Health', 'Greenback Accumulator Sync')
-        +engagement("In an initiative to reduce prescription costs for members by providing access to alternative pharmacy locations with more competitive pricing, Corewell Health (formerly Priority Health) collaborated with Greenback Health. Slalom was tasked with creating a system that would seamlessly merge GBH's accumulator synchronization process with the existing prescription provider's Express Scripts system, alongside CH's Health Care Management System, Trizetto Facets. As a Solution Architect, I took the lead in the discovery and design. I employed detailed diagrams to ensure a comprehensive understanding of the current state and the coming modifications, all while managing backlog, agile ceremonies, and engaging in part-time development.")
-        +techStack("Microservices with Java 11, Apache Camel, Active MQ, Spring, JAXB, Oracle, Integration Tests with Docker.")
-      +client('Corewell Health', 'Priority Well Choice Benefits')
-        +engagement("PWCB encourages customers to make healthier choices, enabling them to earn points that can reduce their health insurance costs. In my role as a Senior Full Stack Engineer in thie Cloud Native Application, I designed and developed the AWS components asynchronously collect data from various sources, facilitating the assessment of subscribers' program status.")
-        +techStack("Python Plaform(AWS Python SDK, Pytoolz,Dependency and Packaging with Poetry), AWS Services ( Lambda, Step Functions, Glue, S3, SNS, Cloudwatch, Dynamo DB, including collaboration and mentoring DevOps team on creation of AWS Cloud Development Kit/CDK components)")
-      +client('Route One', 'Fusion Virtual Retailer')
-        +engagement("Fusion is a car-buying web application, seamlessly integrated with the country's leading dealer management software: Route One's dealer manager. When Fusion is embedded on any dealer's website, it empowers car buyers to choose financing options, apply for financing, obtain Kelly Blue Book trade-in evaluations, and schedule test drives. As a full-stack Sr. engineer, my responsibilities included collaborating with the UX designers, DevOps, and architect. Support and give technical advice to junior developers, building full-fledged web components according to the specifications, customizing the legacy microservices systems to accommodate new requirements, and managing technical debt.")
-        +techStack('Angular, NgRX, TypeScript, Node JS, Lodash, Spring Boot, Java 11, Oracle')
-    +position('Sr.Software Engineer', 'GRID', 'Troy', 'MI', '07', '2018', '08', '2021' )
-      +client('Vehicle visualizer', '(Digital twin)')
-        +engagement("Application that produces a vin specific 3D representation of a given vehicle using pre rendered artifacts and combining them on demand based on vehicle's connectors and circuits, in less than 30 seconds using AWS Lambdas, SNS and S3 services. The final version is rendered to different client applications using proprietary wrapper to WebGL.")
-        +techStack(' Java 8, Spring 4, AWS Dynamo DB, AWS SNS, AWS Lambdas, Node JS, ES 6,  SQLite, Web Pack and Bootstrap 4')
-      +client('Antaris Authoring System Platform')
-        +engagement('In collaboration with publishing managers I develop new Features that increased the productivity and quality for their teams who are responsible for authoring 3D locations, Vehicle Metadata and Diagrams to the Mopar Service Library.')
-        +techStack('Bootstrap 4, WebPack, Node JS, Es6, Lodash, Mustache, Java 8, Kotlin, Gradle, Spring 4, Spring Boot, MySQL, SVG and DOM')
+    each pos in experience.positions
+      +position(pos.title, pos.company, pos.city, pos.state, pos.startMonth, pos.startYear, pos.endMonth, pos.endYear )
+        each cli in pos.clients
+          +client(cli.name, cli.projectName)
+            +engagement(cli.businessDesc)
+            +techStack(cli.techStack)
     +position('Lead Developer / Research Developer', 'Tweddle', 'Detroit', 'MI', '07', '2016', '07', '2018' )
       +client('Intelligent Diagnostics')
         +engagement("I.D. was designed to significantly reduce the amount of time a dealer technician takes in solving car issues. It converts the steps defined in Service Manuals into a series of questions and answers, using real time reading of the vehicle and analytical decisions to display the possible paths to a solution (DTC/ECU). I.D.'s was integrated with Empolis: A Cloud Service Knowledge Graph database that would integrate to")
-        +techStack("NodeJs Jade/Pug Templates, ES6 JQuery and Plugins on the front end. MongoDB as database. Node Kue to process ETL jobs with Empolis with XML/XSLT to integrate with company CMS content. jQuery in the front end with 3D SDK, Java 8, Spring 4, AWS Dynamo DB, AWS SNS, AWS Lambdas, Node JS, ES 6,  Web Pack and Bootstrap 4. Swagger, Travis CI, Ansible and Terraform")
+        +techStack("NodeJs Jade/Pug Templates, ES6 JQuery and Plugins on the front end. MongoDB as database. Node Kue to process ETL jobs with Empolis with XML/XSLT to integrate with company CMS content. jQuery in the front end with 3D SDK, Java 8, Spring 4, AWS Dynamo DB, AWS SNS, AWS Lambdas, Node.js, ES 6,  Web Pack and Bootstrap 4. Swagger, Travis CI, Ansible and Terraform")
       +client('VIN Decoder')
         +engagement("Microservice responsible for verifying and decoding VINs, using previously cached data or using FCA's (Stelanttis) VIN API ")
         +techStack("Scala, Play Framework")
@@ -182,7 +162,7 @@ head
       +client('AIM, Farmington Hills', 'Digital Inspector')
         +engagement('Part of RIIS front on developing AIM’s second generation of their inspection management system. With thousands of Inspectors, AIM relied on the team to deliver a responsive, scalable and integrative architecture that handles their complex tasks of audit planning, workflows of approval and client’s data feed management. ')
         +engagement('As a Sr. Developer, I contributed to architectural design, supervised and mentored the Jr developers on the level and quality of their craft, implemented the solutions in both back and front end as well as batch processing ETL jobs with Spring Batch')
-        +techStack('Rest, Angular, Gulp, Javascript, Lodash, Node Js, Sass, Java 11, Spring(Boot, MVC, Batch, Data), Coffee Script, Groovy, Hibernate, Liquibase, Oracle, Gradle, AWS EC2 and S3 services. ')
+        +techStack('Rest, Angular, Gulp, Javascript, Lodash, Node.js, Sass, Java 11, Spring(Boot, MVC, Batch, Data), Coffee Script, Groovy, Hibernate, Liquibase, Oracle, Gradle, AWS EC2 and S3 services. ')
     +position('Sr. Software Craftsman ', 'Pillar Technology', 'Ann Arbor', 'MI', '03', '2014', '09', '2015')
       +client('Ford, Allen Park MI', 'GFORCE')
         +engagement('Part of Pillar’s transformation team on the vehicle configuration system, named GFORCE V3. This initiative aims to demonstrate to IT Ford how to achieve true rapid development and true scalable systems using TDD,  micro services and continuous deployment. ')
