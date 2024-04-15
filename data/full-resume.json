@@ -210,10 +210,170 @@
                 "endYear": "2013",
                 "clients": [
                     {
-                        "name":"Restaurant Deals",
+                        "name": "Restaurant Deals",
+                        "projectName": "",
+                        "businessDesc": "Dishkin started as a Groupon competitor focused exclusively on the food industry deals in Metro Detroit. The business model of the site changed to a take-out/delivery system like GRUB / HUB.  It had a customer base of 3000 clients. It was discontinued due to lack of investment.",
+                        "techStack": "Spring MVC, Apache Tiles, Less CSS, JQuery, JQueryMobile, Responsive Design, Authorize.Net API,  MySQL, JBoss, Tomcat and Jetty."
+                    }
+                ]
+            },
+            {
+                "title": "Agile Developer",
+                "company": "Cengage Learning",
+                "city": "Farmington Hills'",
+                "state": "MI",
+                "startMonth": "09",
+                "startYear": "2009",
+                "endMonth": "07",
+                "endYear": "2010",
+                "clients": [
+                    {
+                        "name": "Online Educational Products",
+                        "projectName": "",
+                        "businessDesc": "Part of the hand selected team responsible for generating the base Portlet framework that was then used across all library educational projects of the company, with a key role in integrating the framework with Spring and IOC.",
+                        "techStack": "JQuery, JBoss Portal, Portlets, Restlets, Spring, XPath, XSLT"
+                    }
+                ]
+            },
+            {
+                "title": "Lead Application Developer",
+                "company": "DialogDirect (Budco)",
+                "city": "Highland Park",
+                "state": "MI",
+                "startMonth": "05",
+                "startYear": "2007",
+                "endMonth": "11",
+                "endYear": "2009",
+                "clients": [
+                    {
+                        "name": "Brand Management Platform",
+                        "projectName": "",
+                        "businessDesc": "Responsible for designing and developing components for the Brand Management Platform, like event processes, workflows and heavy load XML integrations.",
+                        "techStack": "ANT, Subversion, Jenkins, JMeter, Easy Mock(1.0 and 2.0), Apache Struts, JSTL, PrototypeJs,  JBoss, Spring Template, Hibernate, Oracle 10, XLSLT, XPath, XML, Dom"
+                    },
+                    {
+                        "name": "GM",
+                        "projectName": "GM Navigation Disc",
+                        "businessDesc": "As a Lead developer I implemented features from high critical operations for GM China, created through a JSP parser that converted text in custom tags,  and implemented web redesign with friendly user interfaces and I18N support.",
+                        "techStack": "ANT, Subversion, Jenkins, JMeter, Easy Mock(1.0 and 2.0), Apache Struts, JSTL, PrototypeJs,  JBoss, Spring Template, Hibernate, Oracle 10, XLSLT, XPath, XML, Dom"
+                    }
+                ]
+            },
+            {
+                "title": "Developer",
+                "company": "Interlink",
+                "city": "Berrien Springs",
+                "state": "MI",
+                "startMonth": "07",
+                "startYear": "2005",
+                "endMonth": "03",
+                "endYear": "2007",
+                "clients": [
+                    {
+                        "name": "CM2",
+                        "projectName": "",
+                        "businessDesc": "Design and development of an ETL tool (Extract Transform and Load) that is extensible with plug-ins for parsers and mappers, with a visual editor  that allows mapping of fields into pdf files to generate reports.",
+                        "techStack": "Python, wxPython, XML, XSLT and Firebird Database."
+                    }
+                ]
+            },
+            {
+                "title": "Developer",
+                "company": "Andrews University",
+                "city": "Berrien Springs",
+                "state": "MI",
+                "startMonth": "08",
+                "startYear": "2004",
+                "endMonth": "12",
+                "endYear": "2006",
+                "clients": [
+                    {
+                        "name": "Physics Department",
+                        "projectName": "3D Scanner Visualization",
+                        "businessDesc": "An application that exhibits 3D images of scanned archeological artifacts in OpenGL.",
+                        "techStack": "OpenGL, C++, wxWindows ,STL and cppUnit"
+                    },
+                    {
+                        "name": "Physics Department",
+                        "projectName": "Time Sheet Journal.",
+                        "businessDesc": "An intranet website that records the summary of categorized work hours and provides analytical reports for the management of department’s budget.",
+                        "techStack": "Apache/mod_python, JavaScript and DHTML, Python, XML, Firebird and Linux."
+                    },
+                    {
+                        "name": "Archaeology Department",
+                        "projectName": "Madaba Plains Project",
+                        "businessDesc": "Software that manages the data acquired on archeological digs, providing an off-line mode, user friendly interface.  The data is then remotely synchronized and stored in a central subversion repository with relational integrity.  Also, the application provides integration with Excel, Word and Access allowing the user to analyze and create reports with selected and filtered data.",
+                        "techStack": "Python 2.5, wxPython, integration with Subversion through pysvn, pyVelocity, WiX and firebird embedded"
+                    }
+                ]
+            }
+        ]
+    },
+    "experienceBrazil": {
+        "positions": [
+            {
+                "title": "Lead Developer / Consultant",
+                "company": "Trust Consultants",
+                "city": "Sao Paulo",
+                "state": "Brazil",
+                "startMonth": "06",
+                "startYear": "2002",
+                "endMonth": "07",
+                "endYear": "2004",
+                "clients": [
+                    {
+                        "name": "Bearing Point",
+                        "projectName": "Oracle Exchange OEX",
+                        "businessDesc": "Customization of Oracle Exchange (OEX)’s modules and development of Integration between OEX and SAP for the National Steel Manufacturing Company of Brazil (CSN).",
+                        "techStack": "JSP/ Java Servlets, Oracle Web Methods as ETL tool and Oracle/PLSQL."
+                    },
+                    {
+                        "name": "Nokia",
+                        "projectName": "Code Blood Project",
+                        "businessDesc": "website for open source development of mobile software.  It provided services to the open source community similar to sourceforge.net: code repository, internet hosting, forums and mailing lists.",
+                        "techStack": "Struts / JSTL/ JBOSS (EJB/CMP’s), XDoclets / Ant / MS Cruise Control and PostgreSQL Database"
+                    },
+                    {
+                        "name": "GEMCO bematech.com.br",
+                        "projectName": "",
+                        "businessDesc": "Swing Java application that controls supermarkets’ cashier register using a Linux terminal.  Creation of libraries and Java classes to integrate with Linux libraries for Electronic Fund Transfer",
+                        "techStack": "Java Native Interfaces-JNI.  Development of C++ Library to integrated with JNI proxy classes."
+                    }
+                ]
+            },
+            {
+                "title": "Developer",
+                "company": "Vesta Technologies",
+                "city": "Sao Paulo",
+                "state": "Brazil",
+                "startMonth": "01",
+                "startYear": "2000",
+                "endMonth": "06",
+                "endYear": "2002",
+                "clients": [
+                    {
+                        "name": "Vesta Market",
+                        "projectName": "",
+                        "businessDesc": "An e-procurement platform from Vesta Technologies serving main corporations of Brazil such as Embratel, Serpro and Votorantim of Brazil.",
+                        "techStack": "MS VB Web-Classes, client and server JavaScript, and maintained C++ COM/ATL Objects."
+                    }
+
+                ]
+            },{
+                "title": "Developer",
+                "company": "Ibelli Fainzilberg",
+                "city": "Sao Paulo",
+                "state": "Brazil",
+                "startMonth": "05",
+                "startYear": "1995",
+                "endMonth": "12",
+                "endYear": "1999",
+                "clients": [
+                    {
+                        "name":"LIBS Pharmaceutic",
                         "projectName":"",
-                        "businessDesc":"Dishkin started as a Groupon competitor focused exclusively on the food industry deals in Metro Detroit. The business model of the site changed to a take-out/delivery system like GRUB / HUB.  It had a customer base of 3000 clients. It was discontinued due to lack of investment.",
-                        "techStack":"Spring MVC, Apache Tiles, Less CSS, JQuery, JQueryMobile, Responsive Design, Authorize.Net API,  MySQL, JBoss, Tomcat and Jetty."}
+                        "businessDesc":"Sales Rep Scheduler desktop application",
+                        "techStack":"Delphi, Pascal, MS Sql Server"}            
                 ]
             }
         ]
