@@ -100,13 +100,14 @@ head
   meta(charset='utf-8')
   meta(http-equiv='x-ua-compatible' content='ie=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Pedro Ribeiro
+  title #{info.fullName}
   link(rel='stylesheet' href='css/app.css')
 .grid-container
-  h4 Pedro Ribeiro 
+  h4 #{info.fullName}
+
   .grid-x.grid-padding-x
     .large-3.medium-3.small-3.cell.hide-for-print
-      p Clarkston, MI
+      p #{info.city}, #{info.state}
     .large-3.medium-3.small-3.cell.hide-for-print
       p.text-center
         a(href='mailto:pedroribeirojr@gmail.com') Email
@@ -127,20 +128,10 @@ head
         | linkedin.com/in/pedroribeirojr
 .grid-container
   +header('Career Highlights')
-    +label('30 Years of Experience')
-    +highlight('As a full stack developer, I have navigated a diverse technological landscape, from the old days of MS-DOS development to Servless Architecture in AWS. This experience has allowed me to bridge various industries, from archeology to health insurance, while remaining connected to the ever-evolving world of technology.')
+    each h in highlights
+      +label(h.label)
+      +highlight(h.description)
 
-    +label('Stellantis Wiring Diagrams Platform.')
-    +highlight('Industry-leading vehicle diagnosis software utilized by Mopar dealers and Stellanti\'s factories across the US, Europe, and Latin America, with tens of thousands of daily active users.')
-
-    +label('DishKin')
-    +highlight('Co-Founder, Designer, and Developer of a former local restaurant promotion website in Metro Detroit with 3,000 customers') 
-
-    +label('Agile / XP Consultant')
-    +highlight("As a metro-detroit resident, I am proud to have been part of former Pillar Technology, a company with a reputation for its Agile and Test-Driven Development (TDD) culture, where I was able to provide mentorship to numerous developers not just on TDD but also on Software Craftsmanship, Functional Programming and SOLID principles.")
-
-    +label('Architect and Tech Lead')
-    +highlight("I possess innate leadership qualities and frequently serve as a point of reference for my team. My inaugural experience as a technical lead dates back to 2000 in Brazil. As a craftsman, I have consistently been a source of inspiration and a collaborative force for those striving to excel in their roles.")
 
 .grid-container
   +secondHeader('Experience ')

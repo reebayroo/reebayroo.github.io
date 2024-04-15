@@ -1,0 +1,29 @@
+{
+    "info": {
+        "fullName": "Pedro Ribeiro",
+        "city": "Clarskton",
+        "state": "MI"
+    },
+    "highlights": [
+        {
+            "label": "30 Years of Experience",
+            "description": "As a full stack developer, I have navigated a diverse technological landscape, from the old days of MS-DOS development to Servless Architecture in AWS. This experience has allowed me to bridge various industries, from archeology to health insurance, while remaining connected to the ever-evolving world of technology."
+        },
+        {
+            "label": "Stellantis Wiring Diagrams Platform.",
+            "description": "Industry-leading vehicle diagnosis software utilized by Mopar dealers and Stellanti's factories across the US, Europe, and Latin America, with tens of thousands of daily active users."
+        },
+        {
+            "label": "DishKin",
+            "description": "Co-Founder, Designer, and Builder of a former local restaurant promotion website in Metro Detroit with 3,000 customers"
+        },
+        {
+            "label": "Agile / XP Consultant",
+            "description": "As a metro-detroit resident, I am proud to have been part of former Pillar Technology, a company with a reputation for its Agile and Test-Driven Development (TDD) culture, where I was able to provide mentorship to numerous developers not just on TDD but also on Software Craftsmanship, Functional Programming and SOLID principles."
+        },
+        {
+            "label": "Hands on Tech Lead",
+            "description": "I possess innate leadership qualities and frequently serve as a point of reference for my team. My inaugural experience as a technical lead dates back to 2000 in Brazil. As a craftsman, I have consistently been a source of inspiration and a collaborative force for those striving to excel in their roles."
+        }
+    ]
+}
