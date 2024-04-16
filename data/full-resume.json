@@ -280,8 +280,6 @@
                 "clients": [
                     {
                         "name": "Brand Management Platform",
-                        "projectName": "",
-                        "shortBusinessDesc": "...",
                         "businessDesc": "Responsible for designing and developing components for the Brand Management Platform, like event processes, workflows and heavy load XML integrations.",
                         "techStack": "ANT, Subversion, Jenkins, JMeter, Easy Mock(1.0 and 2.0), Apache Struts, JSTL, PrototypeJs,  JBoss, Spring Template, Hibernate, Oracle 10, XLSLT, XPath, XML, Dom"
                     },
@@ -369,8 +367,6 @@
                     },
                     {
                         "name": "GEMCO bematech.com.br",
-                        "projectName": "",
-                        "shortBusinessDesc": "...",
                         "businessDesc": "Swing Java application that controls supermarkets’ cashier register using a Linux terminal.  Creation of libraries and Java classes to integrate with Linux libraries for Electronic Fund Transfer",
                         "techStack": "Java Native Interfaces-JNI.  Development of C++ Library to integrated with JNI proxy classes."
                     }
@@ -389,7 +385,6 @@
                     {
                         "name": "Vesta Market",
                         "projectName": "",
-                        "shortBusinessDesc": "...",
                         "businessDesc": "An e-procurement platform from Vesta Technologies serving main corporations of Brazil such as Embratel, Serpro and Votorantim of Brazil.",
                         "techStack": "MS VB Web-Classes, client and server JavaScript, and maintained C++ COM/ATL Objects."
                     }
@@ -406,9 +401,8 @@
                 "endYear": "1999",
                 "clients": [
                     {
-                        "name": "LIBS Pharmaceutic",
                         "projectName": "",
-                        "shortBusinessDesc": "...",
+                        "name": "LIBS Pharmaceutic",
                         "businessDesc": "Sales Rep Scheduler desktop application",
                         "techStack": "Delphi, Pascal, MS Sql Server"
                     }
