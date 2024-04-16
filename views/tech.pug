@@ -1,3 +1,4 @@
+
 mixin header(title)
   h4= title
   .callout
@@ -54,7 +55,7 @@ mixin job(company, title, period, url, descUrl )
       .large-4.medium-4.cell
         h5.text-right= period
       block
-mixin client( client, projectName )
+mixin client( client, projectName, shortDescription )
   .large-1.medium-1.cell
   .large-11.medium-11.cell
     li
@@ -64,21 +65,24 @@ mixin client( client, projectName )
         |, 
         em #{projectName}
       | &nbsp;:&nbsp;
+      | #{shortDescription}
 
       block
       //-   | #{projectName}
+mixin responsibilities(resp)
+  .large-1.medium-1.cell
+  .large-11.medium-11.cell
+    | #{resp}
+      
         
 mixin engagement( desc )
     | #{desc}
 mixin engagement2( desc )
     | #{desc}
     br
-mixin responsibilities(resp)
-  .large-1.medium-1.cell
-  .large-11.medium-11.cell
-    | #{resp}
 
 mixin techStack( desc )
+    br
     p 
       em Technologies&nbsp;:&nbsp;
       | #{desc}
@@ -120,7 +124,7 @@ head
         a(href='http://linkedin.com/in'+ info.linkedInHandle, target="__blank") LinkedIn
     .large-3.medium-3.small-3.cell.hide-for-print
       p.text-center
-        a(href='./pedro_ribeiro_resume_full.pdf' ) Download Resume
+        a(href='./pedro_ribeiro_resume_tech.pdf' ) Download Resume
   .grid-x.grid-padding-x
     .large-4.medium-4.small-4.cell.show-for-print
       p #{info.address} #{info.city}, #{info.state}
@@ -142,16 +146,14 @@ head
     each pos in experience.positions
       +position(pos.title, pos.company, pos.city, pos.state, pos.startMonth, pos.startYear, pos.endMonth, pos.endYear )
         each cli in pos.clients
-          +client(cli.name, cli.projectName)
-            +engagement(cli.businessDesc)
+          +client(cli.name, cli.projectName, cli.shortBusinessDesc || cli.businessDesc)
             +responsibilities(cli.responsibilities)
             +techStack(cli.techStack)
   +secondHeader("Experience in Brazil")
     each pos in experienceBrazil.positions
       +position(pos.title, pos.company, pos.city, pos.state, pos.startMonth, pos.startYear, pos.endMonth, pos.endYear )
         each cli in pos.clients
-          +client(cli.name, cli.projectName)
-            +engagement(cli.businessDesc)
+          +client(cli.name, cli.projectName, cli.shortBusinessDesc)
             +responsibilities(cli.responsibilities)
             +techStack(cli.techStack)
   +header("Education and Certifications")
