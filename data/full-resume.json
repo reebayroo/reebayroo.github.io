@@ -42,6 +42,14 @@
                 "endYear": "",
                 "clients": [
                     {
+                        "name": "Capital One",
+                        "projectName": "Prometheus Financial Core - PFC",
+                        "shortBusinessDesc": "Managing Cloud Platform of Financial Accounts",
+                        "responsibilities": "As an Individual Contributor, I was part of a team of Scala engineers responsible for maintaining and implementing new features on their Elm compiler, the supporting libraries, used by the microservices on the platform. This state-of-the-art architecture uses the Morphir SDK to construct Financial Instruments (FIs) built in Elm by domain experts. Each FI transaction is interpreted at extremely low latency to guarantee the demand required by the institution.",
+                        "businessDesc": "PFC is a platform that creates, operates, and manages C1's Financial Accounts in the cloud.",
+                        "techStack": "Scala 3, Zio 2, Sbt, Mill, Morphir, TypeScript, Elm, Docker, AWS Fargate and Dynamo DB "
+                    },
+                    {
                         "name": "Corewell Health",
                         "projectName": "Greenback Accumulator Sync",
                         "shortBusinessDesc": "New vendor integration",
